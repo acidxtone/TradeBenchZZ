@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Complete First Year Field Reference — SKILLED TRADES | TradeBenchPrep</title>
+<meta name="description" content="Free first-year field reference for steamfitter/pipefitter and skilled trades: geometry, triangles, volume, pressure, water, flow, steam, offsets, gas laws, Ohm's Law, and key constants. Canadian apprenticeship exam prep."/>
+<meta name="keywords" content="pipefitter field reference, steamfitter formulas, first year apprenticeship, skilled trades reference, pipe offset calculator, pressure formulas, Canadian trades exam"/>
+<meta name="author" content="TradeBenchPrep"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.tradebenchprep.org/complete-first-year-field-reference.html"/>
+<meta property="og:title" content="Complete First Year Field Reference — SKILLED TRADES | TradeBenchPrep"/>
+<meta property="og:description" content="Free first-year field reference for steamfitter/pipefitter and skilled trades: geometry, pressure, flow, offsets, gas laws, electrical formulas."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.tradebenchprep.org/complete-first-year-field-reference.html"/>
+<meta property="og:site_name" content="TradeBenchPrep"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Complete First Year Field Reference — SKILLED TRADES | TradeBenchPrep"/>
+<meta name="twitter:description" content="Free first-year field reference for steamfitter/pipefitter and skilled trades: geometry, pressure, flow, offsets, gas laws."/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5932083189692902" crossorigin="anonymous"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#07090d; --bg2:#0d1218; --bg3:#111820; --border:#1a2535;
+    --text:#ddd8cc; --muted:#4a6070; --dim:#2a3a4a;
+    --orange:#FF6B35; --amber:#FFB627; --teal:#06FFA5; --blue:#4EC9F5;
+    --purple:#C77DFF; --pink:#FF6B9D; --green:#7AE582; --lime:#C8F135;
+    --sky:#38BDF8; --coral:#FB7185; --gold:#F59E0B; --indigo:#818CF8;
+    --font-display:'Bebas Neue',sans-serif;
+    --font-mono:'DM Mono',monospace;
+    --font-body:'Barlow',sans-serif;
+  }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:var(--font-body); font-size:15px; line-height:1.6; overflow-x:hidden; }
+  ::-webkit-scrollbar { width:5px; background:var(--bg); }
+  ::-webkit-scrollbar-thumb { background:var(--orange); border-radius:3px; }
+  body::before {
+    content:''; position:fixed; inset:0;
+    background-image: linear-gradient(rgba(255,107,53,.025) 1px,transparent 1px), linear-gradient(90deg,rgba(255,107,53,.025) 1px,transparent 1px);
+    background-size:48px 48px; pointer-events:none; z-index:0;
+  }
+  /* HERO */
+  .hero { position:relative; padding:64px 24px 52px; text-align:center; border-bottom:1px solid var(--border); overflow:hidden; }
+  .hero::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:600px; height:1px; background:linear-gradient(90deg,transparent,var(--orange),transparent); }
+  .hero-badge { display:inline-block; font-family:var(--font-mono); font-size:10px; letter-spacing:.35em; color:var(--bg); background:var(--orange); padding:5px 16px; border-radius:2px; margin-bottom:18px; }
+  .hero h1 { font-family:var(--font-display); font-size:clamp(3rem,10vw,6.5rem); letter-spacing:.06em; line-height:.95; background:linear-gradient(135deg,var(--orange) 0%,var(--amber) 60%,#fff8e0 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:10px; }
+  .hero-sub { font-family:var(--font-mono); font-size:11px; letter-spacing:.3em; color:var(--muted); text-transform:uppercase; }
+  .gear { position:absolute; font-size:180px; opacity:.03; pointer-events:none; line-height:1; }
+  .gear-l { top:-20px; left:-30px; } .gear-r { bottom:-40px; right:-30px; }
+  /* NAV */
+  .nav-wrap { position:sticky; top:0; z-index:100; background:rgba(7,9,13,.93); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); padding:8px 14px; display:flex; flex-wrap:wrap; gap:5px; justify-content:center; }
+  .tab { font-family:var(--font-mono); font-size:9.5px; letter-spacing:.14em; padding:5px 12px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; transition:all .16s; text-decoration:none; white-space:nowrap; }
+  .tab:hover { border-color:var(--orange); color:var(--orange); }
+  .tab.active { background:var(--orange); color:var(--bg); border-color:var(--orange); font-weight:500; }
+  /* LAYOUT */
+  .container { max-width:1160px; margin:0 auto; padding:36px 18px 80px; position:relative; z-index:1; }
+  .section { margin-bottom:52px; }
+  .section-header { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .section-icon { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .section-title { font-family:var(--font-display); font-size:22px; letter-spacing:.15em; }
+  .section-line { flex:1; height:1px; opacity:.25; }
+  /* CARDS */
+  .card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(235px,1fr)); gap:11px; }
+  .card { background:var(--bg3); border:1px solid var(--border); border-top:2px solid transparent; border-radius:12px; padding:17px; transition:transform .18s ease,box-shadow .18s ease; }
+  .card:hover { transform:translateY(-4px); box-shadow:0 8px 28px rgba(0,0,0,.4); }
+  .card-top { display:flex; align-items:center; gap:9px; margin-bottom:12px; }
+  .card-emoji { width:28px; height:28px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+  .card-name { font-size:12px; font-weight:600; color:#c8d8e8; letter-spacing:.04em; line-height:1.3; }
+  .formula-box { background:var(--bg); border:1px solid var(--dim); border-radius:7px; padding:9px 11px; margin-bottom:10px; font-family:var(--font-mono); font-size:12px; line-height:1.6; word-break:break-word; }
+  .when-text { font-size:11px; color:var(--muted); line-height:1.55; padding-left:9px; border-left:2px solid var(--dim); }
+  .card-2 { grid-column:span 2; }
+  /* SHAPE CARDS */
+  .shape-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; }
+  .shape-card { background:var(--bg3); border:1px solid var(--border); border-radius:14px; padding:20px; transition:transform .18s; display:flex; flex-direction:column; gap:12px; }
+  .shape-card:hover { transform:translateY(-4px); }
+  .shape-svg-wrap { display:flex; justify-content:center; align-items:center; height:110px; background:var(--bg); border-radius:8px; border:1px solid var(--dim); }
+  .shape-title { font-family:var(--font-display); font-size:16px; letter-spacing:.12em; }
+  /* GAS CARDS */
+  .gas-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:12px; }
+  .gas-card { background:var(--bg3); border:1px solid var(--border); border-top:2px solid var(--orange); border-radius:12px; padding:20px; transition:transform .18s; }
+  .gas-card:hover { transform:translateY(-4px); }
+  .gas-law-name { font-family:var(--font-display); font-size:18px; letter-spacing:.1em; color:var(--orange); margin-bottom:6px; }
+  /* ELECTRICAL */
+  .law-wheel-wrap { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .law-wheel { background:var(--bg3); border:1px solid var(--border); border-radius:14px; padding:20px; display:flex; flex-direction:column; gap:10px; }
+  .law-wheel h3 { font-family:var(--font-display); font-size:18px; letter-spacing:.15em; margin-bottom:4px; }
+  .tf-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+  .tf-box { background:var(--bg); border:1px solid var(--dim); border-radius:7px; padding:8px 6px; text-align:center; font-family:var(--font-mono); font-size:11px; line-height:1.7; }
+  /* PRESSURE TRIANGLE */
+  .p-tri { background:var(--bg3); border:1px solid var(--border); border-top:2px solid var(--blue); border-radius:12px; padding:20px; margin-bottom:14px; }
+  /* CONSTANTS */
+  .const-table { background:var(--bg3); border:1px solid var(--border); border-top:2px solid var(--amber); border-radius:12px; overflow:hidden; }
+  .const-row { display:grid; grid-template-columns:1.6fr 1.2fr 2fr; padding:10px 18px; gap:14px; align-items:center; border-bottom:1px solid var(--border); transition:background .12s; }
+  .const-row:last-child { border-bottom:none; }
+  .const-row:nth-child(even) { background:rgba(255,255,255,.013); }
+  .const-row:hover { background:rgba(255,182,39,.05); }
+  .const-label { font-size:12px; color:#b0c4d8; }
+  .const-val { font-family:var(--font-mono); font-size:13px; color:var(--amber); font-weight:500; }
+  .const-note { font-size:11px; color:var(--muted); }
+  /* OFFSET PANEL */
+  .offset-panel { background:var(--bg3); border:1px solid rgba(6,255,165,.18); border-top:2px solid var(--teal); border-radius:12px; padding:20px; margin-top:14px; }
+  .offset-panel h3 { font-family:var(--font-display); font-size:16px; letter-spacing:.18em; color:var(--teal); margin-bottom:14px; }
+  .mult-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(100px,1fr)); gap:10px; margin-bottom:14px; }
+  .mult-tile { background:var(--bg); border:1px solid rgba(6,255,165,.12); border-radius:8px; padding:14px 10px; text-align:center; }
+  .mult-deg { font-family:var(--font-display); font-size:22px; color:var(--teal); letter-spacing:.08em; }
+  .mult-num { font-family:var(--font-mono); font-size:14px; color:var(--amber); margin-top:4px; }
+  .rolling-box { background:var(--bg); border:1px solid var(--dim); border-radius:8px; padding:12px 14px; font-family:var(--font-mono); font-size:11.5px; color:var(--teal); line-height:1.8; }
+  /* ALERT */
+  .alert-box { border-radius:8px; padding:12px 16px; margin-bottom:14px; font-family:var(--font-mono); font-size:11px; line-height:1.6; }
+  /* FOOTER */
+  .footer { text-align:center; padding:24px; font-family:var(--font-mono); font-size:9px; letter-spacing:.2em; color:var(--dim); border-top:1px solid var(--border); text-transform:uppercase; }
+  /* Ad slots — minimal so layout/function unchanged */
+  .ad-slot-top, .ad-slot-bottom { max-width:1160px; margin:0 auto; min-height:90px; text-align:center; position:relative; z-index:1; }
+  .ad-slot-top { padding:12px 18px 0; }
+  .ad-slot-bottom { padding:24px 18px; }
+  .hero-back { position:absolute; top:16px; left:18px; font-family:var(--font-mono); font-size:10px; letter-spacing:.12em; color:var(--muted); text-decoration:none; z-index:10; }
+  .hero-back:hover { color:var(--orange); }
+  @media(max-width:620px){
+    .card-grid,.shape-grid { grid-template-columns:1fr; }
+    .law-wheel-wrap { grid-template-columns:1fr; }
+    .const-row { grid-template-columns:1fr 1fr; }
+    .const-note { display:none; }
+    .mult-grid { grid-template-columns:repeat(2,1fr); }
+    .tf-grid { grid-template-columns:repeat(2,1fr); }
+    .card-2 { grid-column:span 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a class="hero-back" href="https://www.tradebenchprep.org/Curriculum">← Back to Curriculum</a>
+  <div class="gear gear-l">⚙</div>
+  <div class="gear gear-r">⚙</div>
+  <div class="hero-badge">Complete First Year Field Reference</div>
+  <h1>SKILLED TRADES</h1>
+  <p class="hero-sub">Geometry · Triangles · Volume · % · Pressure · Water · Flow · Steam · Offsets · Gas Laws · Electrical</p>
+</div>
+
+<nav class="nav-wrap">
+  <a class="tab active" href="#geometry">Geometry</a>
+  <a class="tab" href="#triangles">Triangles</a>
+  <a class="tab" href="#volume">Volume</a>
+  <a class="tab" href="#percentage">% &amp; Ratio</a>
+  <a class="tab" href="#pressure">Pressure</a>
+  <a class="tab" href="#water">Water</a>
+  <a class="tab" href="#temperature">Temp</a>
+  <a class="tab" href="#flow">Flow</a>
+  <a class="tab" href="#steam">Steam</a>
+  <a class="tab" href="#offsets">Offsets</a>
+  <a class="tab" href="#expansion">Expansion</a>
+  <a class="tab" href="#gaslaws">Gas Laws</a>
+  <a class="tab" href="#force">Force &amp; Test</a>
+  <a class="tab" href="#electrical">Ohm &amp; Watt</a>
+  <a class="tab" href="#constants">Constants</a>
+  <a class="tab" href="#conversions">Conversions</a>
+</nav>
+
+<div class="ad-slot-top">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5932083189692902" data-ad-slot="0000000000" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════ GEOMETRY ═══════════════════ -->
+<div class="section" id="geometry">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(6,255,165,.15);border:1px solid rgba(6,255,165,.3)">📐</div>
+    <div class="section-title" style="color:var(--teal)">AREAS &amp; PERIMETERS</div>
+    <div class="section-line" style="background:var(--teal)"></div>
+  </div>
+  <div class="shape-grid">
+
+    <div class="shape-card" style="border-top:2px solid var(--teal)">
+      <div class="shape-svg-wrap">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#06FFA5" stroke-width="2"/>
+          <line x1="50" y1="50" x2="88" y2="50" stroke="#FFB627" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <circle cx="50" cy="50" r="3" fill="#06FFA5"/>
+          <text x="66" y="46" fill="#FFB627" font-size="11" font-family="monospace">r</text>
+          <line x1="12" y1="50" x2="88" y2="50" stroke="#4EC9F5" stroke-width="1" stroke-dasharray="3,3" opacity=".4"/>
+          <text x="46" y="78" fill="#4EC9F5" font-size="10" font-family="monospace">d</text>
+        </svg>
+      </div>
+      <div class="shape-title" style="color:var(--teal)">CIRCLE</div>
+      <div class="formula-box" style="color:var(--teal);font-size:11.5px;line-height:1.9">
+        Area &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= π × r²<br>
+        Area &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 0.7854 × d²<br>
+        Circumference = π × d<br>
+        <span style="color:var(--muted)">π=3.1416 · r=radius · d=diameter</span>
+      </div>
+      <div class="when-text" style="border-left-color:rgba(6,255,165,.4)">Pipe bore area for flow calcs, flange face area for pressure/force, insulation takeoffs, tank end caps.</div>
+    </div>
+
+    <div class="shape-card" style="border-top:2px solid var(--blue)">
+      <div class="shape-svg-wrap">
+        <svg width="120" height="90" viewBox="0 0 120 90">
+          <rect x="14" y="16" width="92" height="58" fill="none" stroke="#4EC9F5" stroke-width="2"/>
+          <line x1="14" y1="6" x2="106" y2="6" stroke="#FFB627" stroke-width="1.5"/>
+          <line x1="14" y1="3" x2="14" y2="9" stroke="#FFB627" stroke-width="1.5"/>
+          <line x1="106" y1="3" x2="106" y2="9" stroke="#FFB627" stroke-width="1.5"/>
+          <text x="54" y="5" fill="#FFB627" font-size="10" font-family="monospace">L</text>
+          <line x1="112" y1="16" x2="112" y2="74" stroke="#06FFA5" stroke-width="1.5"/>
+          <line x1="110" y1="16" x2="114" y2="16" stroke="#06FFA5" stroke-width="1.5"/>
+          <line x1="110" y1="74" x2="114" y2="74" stroke="#06FFA5" stroke-width="1.5"/>
+          <text x="115" y="49" fill="#06FFA5" font-size="10" font-family="monospace">W</text>
+        </svg>
+      </div>
+      <div class="shape-title" style="color:var(--blue)">RECTANGLE / SQUARE</div>
+      <div class="formula-box" style="color:var(--blue);font-size:11.5px;line-height:1.9">
+        Area &nbsp;&nbsp;&nbsp;&nbsp;= L × W<br>
+        Perimeter = 2 × (L + W)<br>
+        <span style="color:var(--muted)">Square: all sides = S → A = S²</span>
+      </div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">Equipment pads, boiler room floors, duct openings, trench sizing, concrete pads for supports.</div>
+    </div>
+
+    <div class="shape-card" style="border-top:2px solid var(--amber)">
+      <div class="shape-svg-wrap">
+        <svg width="100" height="95" viewBox="0 0 100 95">
+          <polygon points="50,8 6,82 94,82" fill="none" stroke="#FFB627" stroke-width="2"/>
+          <line x1="50" y1="8" x2="50" y2="82" stroke="#06FFA5" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <text x="53" y="50" fill="#06FFA5" font-size="11" font-family="monospace">h</text>
+          <text x="43" y="92" fill="#FFB627" font-size="11" font-family="monospace">b</text>
+          <line x1="47" y1="82" x2="47" y2="77" stroke="#06FFA5" stroke-width="1"/>
+          <line x1="47" y1="77" x2="50" y2="77" stroke="#06FFA5" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="shape-title" style="color:var(--amber)">TRIANGLE</div>
+      <div class="formula-box" style="color:var(--amber);font-size:11.5px;line-height:1.9">
+        Area &nbsp;&nbsp;&nbsp;&nbsp;= ½ × base × height<br>
+        Perimeter = a + b + c<br>
+        <span style="color:var(--muted)">Height must be perpendicular to base</span>
+      </div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Gusset plates, roof slopes, triangular support brackets, cut-off material estimates.</div>
+    </div>
+
+    <div class="shape-card" style="border-top:2px solid var(--purple)">
+      <div class="shape-svg-wrap">
+        <svg width="90" height="100" viewBox="0 0 90 100">
+          <ellipse cx="45" cy="18" rx="30" ry="10" fill="none" stroke="#C77DFF" stroke-width="2"/>
+          <ellipse cx="45" cy="78" rx="30" ry="10" fill="none" stroke="#C77DFF" stroke-width="2"/>
+          <line x1="15" y1="18" x2="15" y2="78" stroke="#C77DFF" stroke-width="2"/>
+          <line x1="75" y1="18" x2="75" y2="78" stroke="#C77DFF" stroke-width="2"/>
+          <line x1="79" y1="18" x2="79" y2="78" stroke="#FFB627" stroke-width="1.5"/>
+          <line x1="77" y1="18" x2="81" y2="18" stroke="#FFB627" stroke-width="1.5"/>
+          <line x1="77" y1="78" x2="81" y2="78" stroke="#FFB627" stroke-width="1.5"/>
+          <text x="82" y="52" fill="#FFB627" font-size="9" font-family="monospace">h</text>
+          <line x1="45" y1="78" x2="75" y2="78" stroke="#06FFA5" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <text x="55" y="90" fill="#06FFA5" font-size="9" font-family="monospace">r</text>
+        </svg>
+      </div>
+      <div class="shape-title" style="color:var(--purple)">CYLINDER</div>
+      <div class="formula-box" style="color:var(--purple);font-size:11.5px;line-height:1.9">
+        Lateral SA = 2π × r × h<br>
+        Total SA &nbsp;&nbsp;= 2π × r × (r + h)<br>
+        Volume &nbsp;&nbsp;&nbsp;= π × r² × h<br>
+        <span style="color:var(--muted)">r=radius · h=height/length</span>
+      </div>
+      <div class="when-text" style="border-left-color:rgba(199,125,255,.4)">Tank insulation takeoffs, pipe insulation quantity, paint coverage on vessels and storage tanks.</div>
+    </div>
+
+    <div class="shape-card" style="border-top:2px solid var(--coral)">
+      <div class="shape-svg-wrap">
+        <svg width="115" height="90" viewBox="0 0 115 90">
+          <polygon points="10,65 10,22 56,10 56,53" fill="none" stroke="#FB7185" stroke-width="1.5"/>
+          <polygon points="56,10 105,22 105,65 56,53" fill="none" stroke="#FB7185" stroke-width="1.5"/>
+          <polygon points="10,65 56,77 105,65 56,53" fill="none" stroke="#FB7185" stroke-width="1.5"/>
+          <text x="24" y="40" fill="#FFB627" font-size="9" font-family="monospace">W</text>
+          <text x="74" y="40" fill="#06FFA5" font-size="9" font-family="monospace">L</text>
+          <text x="2" y="45" fill="#4EC9F5" font-size="9" font-family="monospace">H</text>
+        </svg>
+      </div>
+      <div class="shape-title" style="color:var(--coral)">BOX / RECTANGULAR PRISM</div>
+      <div class="formula-box" style="color:var(--coral);font-size:11.5px;line-height:1.9">
+        Surface Area = 2(LW + LH + WH)<br>
+        Volume &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= L × W × H<br>
+        <span style="color:var(--muted)">L=length · W=width · H=height</span>
+      </div>
+      <div class="when-text" style="border-left-color:rgba(251,113,133,.4)">Equipment housings, duct volumes, trenches, concrete pours, insulated box enclosures.</div>
+    </div>
+
+    <div class="shape-card" style="border-top:2px solid var(--lime)">
+      <div class="shape-svg-wrap">
+        <svg width="115" height="85" viewBox="0 0 115 85">
+          <polygon points="22,72 93,72 80,18 35,18" fill="none" stroke="#C8F135" stroke-width="2"/>
+          <line x1="57" y1="18" x2="57" y2="72" stroke="#06FFA5" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <text x="59" y="50" fill="#06FFA5" font-size="9" font-family="monospace">h</text>
+          <text x="51" y="14" fill="#C8F135" font-size="9" font-family="monospace">a</text>
+          <text x="51" y="82" fill="#C8F135" font-size="9" font-family="monospace">b</text>
+        </svg>
+      </div>
+      <div class="shape-title" style="color:var(--lime)">TRAPEZOID</div>
+      <div class="formula-box" style="color:var(--lime);font-size:11.5px;line-height:1.9">
+        Area = ½ × (a + b) × h<br>
+        <span style="color:var(--muted)">a,b = parallel sides · h = height</span>
+      </div>
+      <div class="when-text" style="border-left-color:rgba(200,241,53,.4)">Sloped trenches, tapered insulation sections, eccentric reducer face areas.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════ TRIANGLES ═══════════════════ -->
+<div class="section" id="triangles">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,182,39,.15);border:1px solid rgba(255,182,39,.3)">△</div>
+    <div class="section-title" style="color:var(--amber)">TRIANGLE &amp; SLOPE FORMULAS</div>
+    <div class="section-line" style="background:var(--amber)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">📐</div><div class="card-name">Pythagorean Theorem</div></div>
+      <div class="formula-box" style="color:var(--amber)">c² = a² + b²<br>c = √(a² + b²)</div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Find the hypotenuse (diagonal) of any right triangle. Foundation of ALL pipe offset calculations — rise, run, and travel.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">📉</div><div class="card-name">Rise, Run &amp; Slope</div></div>
+      <div class="formula-box" style="color:var(--amber);font-size:11.5px;line-height:1.8">Slope = Rise ÷ Run<br>Rise &nbsp;= Run × Slope<br>Run &nbsp;&nbsp;= Rise ÷ Slope</div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Drain lines, condensate returns — any gravity-flow pipe needs minimum slope. Know two values, find the third.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">📏</div><div class="card-name">Grade &amp; Drop</div></div>
+      <div class="formula-box" style="color:var(--amber);font-size:11.5px;line-height:1.8">Drop = Length × Grade per foot<br>Grade (%) = (Drop ÷ Run) × 100<br><span style="color:var(--muted)">1% grade = ⅛" per foot</span></div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Drain and condensate lines. Minimum ¼"/ft (2% grade) typical. Calculate total drop before routing through structure.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">📐</div><div class="card-name">SOH · CAH · TOA</div></div>
+      <div class="formula-box" style="color:var(--amber);font-size:11.5px;line-height:1.8">sin θ = Opposite ÷ Hypotenuse<br>cos θ = Adjacent ÷ Hypotenuse<br>tan θ = Opposite ÷ Adjacent</div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Find any angle or side in a right triangle. Used in advanced rolling offsets and precise fitting angle calculations.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">🔢</div><div class="card-name">Common Pipe Slopes</div></div>
+      <div class="formula-box" style="color:var(--amber);font-size:11px;line-height:1.9">⅛"/ft = 1.04% grade<br>¼"/ft = 2.08% ← most common<br>½"/ft = 4.17% grade<br>1"/ft &nbsp;= 8.33% grade</div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Drain lines minimum ¼"/ft. Condensate returns often ⅛"/ft. Verify with local plumbing/mechanical code.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">🔺</div><div class="card-name">Pipe Drop Over Length</div></div>
+      <div class="formula-box" style="color:var(--amber);font-size:11.5px;line-height:1.8">Drop (in) = Length (ft) × Drop per ft<br><span style="color:var(--muted)">40 ft × ¼"/ft = 10" total drop</span></div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">How low the far end of a drain line will be — critical for fitting through floor joists and structural members.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ VOLUME ═══════════════════ -->
+<div class="section" id="volume">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(78,201,245,.15);border:1px solid rgba(78,201,245,.3)">🧊</div>
+    <div class="section-title" style="color:var(--blue)">VOLUME CALCULATIONS</div>
+    <div class="section-line" style="background:var(--blue)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">🔵</div><div class="card-name">Cylinder (Tank / Pipe)</div></div>
+      <div class="formula-box" style="color:var(--blue)">V = π × r² × h<br>V = 0.7854 × d² × h</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">Volume of any cylindrical tank, vessel, or pipe section. Use consistent units throughout (all feet or all inches).</div>
+    </div>
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">📦</div><div class="card-name">Rectangular Tank</div></div>
+      <div class="formula-box" style="color:var(--blue)">V (ft³) = L × W × H<br>V (gal) = L × W × H × 7.481</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">Expansion tanks, day tanks, equipment pits. Multiply ft³ × 7.481 to get US gallons.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">🧮</div><div class="card-name">Pipe System Volume</div></div>
+      <div class="formula-box" style="color:var(--blue)">Gal = 0.0408 × ID² (in) × Length (ft)</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">Total water content of piping — chemical dosing, glycol fill ratio, drain-down planning.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">🔺</div><div class="card-name">Cone / Hopper</div></div>
+      <div class="formula-box" style="color:var(--blue)">V = ⅓ × π × r² × h</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">Conical reducer sections, hopper bottoms on vessels, sump designs, cone-bottom tanks.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">💧</div><div class="card-name">Volume → Weight (Water)</div></div>
+      <div class="formula-box" style="color:var(--blue);font-size:11.5px;line-height:1.8">Weight (lb) = Volume (gal) × 8.34<br>Weight (lb) = Volume (ft³) × 62.4</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">Structural loading of water-filled systems — floor loading, hanger design, lifting calculations.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">🔄</div><div class="card-name">ft³ ↔ Gallons</div></div>
+      <div class="formula-box" style="color:var(--blue);font-size:11.5px;line-height:1.8">US gal = ft³ × 7.481<br>ft³ &nbsp;&nbsp;&nbsp;&nbsp;= US gal ÷ 7.481</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">Tank manufacturers give ft³, systems are filled in gallons. Convert freely between both.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PERCENTAGE ═══════════════════ -->
+<div class="section" id="percentage">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(200,241,53,.15);border:1px solid rgba(200,241,53,.3)">%</div>
+    <div class="section-title" style="color:var(--lime)">PERCENTAGE &amp; RATIO</div>
+    <div class="section-line" style="background:var(--lime)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--lime)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(200,241,53,.12)">🔢</div><div class="card-name">Part–Whole–Percent</div></div>
+      <div class="formula-box" style="color:var(--lime);font-size:11.5px;line-height:1.9">Part &nbsp;&nbsp;&nbsp;= Whole × (% ÷ 100)<br>Whole &nbsp;&nbsp;= Part ÷ (% ÷ 100)<br>Percent = (Part ÷ Whole) × 100</div>
+      <div class="when-text" style="border-left-color:rgba(200,241,53,.4)">Cover any % problem — inhibitor concentration, glycol mix, efficiency ratings, material waste allowances.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--lime)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(200,241,53,.12)">🧪</div><div class="card-name">Glycol Mix Calculation</div></div>
+      <div class="formula-box" style="color:var(--lime);font-size:11.5px;line-height:1.8">Glycol (gal) = Total Vol × (% ÷ 100)<br>Water (gal) = Total Vol − Glycol</div>
+      <div class="when-text" style="border-left-color:rgba(200,241,53,.4)">30% in 500-gal system: 500 × 0.30 = 150 gal glycol, 350 gal water. Standard freeze protection mixing.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--lime)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(200,241,53,.12)">📊</div><div class="card-name">% Increase / Decrease</div></div>
+      <div class="formula-box" style="color:var(--lime);font-size:11.5px;line-height:1.8">% Change = ((New − Old) ÷ Old) × 100<br>New Value = Old × (1 + % ÷ 100)</div>
+      <div class="when-text" style="border-left-color:rgba(200,241,53,.4)">Pressure loss through components, pump efficiency degradation, material cost estimates and budget changes.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--lime)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(200,241,53,.12)">⚖️</div><div class="card-name">Ratio &amp; Proportion</div></div>
+      <div class="formula-box" style="color:var(--lime);font-size:11.5px;line-height:1.8">a/b = c/d → cross multiply: a×d = b×c<br>Solve x: x = (b × c) ÷ d</div>
+      <div class="when-text" style="border-left-color:rgba(200,241,53,.4)">Scaling drawings, adjusting chemical doses, proportional flow splitting in parallel circuits.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--lime)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(200,241,53,.12)">⚙️</div><div class="card-name">Efficiency &amp; Derating</div></div>
+      <div class="formula-box" style="color:var(--lime);font-size:11.5px;line-height:1.8">Output = Input × (Eff% ÷ 100)<br>Input &nbsp;= Output ÷ (Eff% ÷ 100)</div>
+      <div class="when-text" style="border-left-color:rgba(200,241,53,.4)">Boiler efficiency, pump efficiency, heat exchanger effectiveness — useful output vs rated input.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--lime)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(200,241,53,.12)">🏗</div><div class="card-name">Material Waste Allowance</div></div>
+      <div class="formula-box" style="color:var(--lime);font-size:11.5px;line-height:1.8">Order Qty = Net Qty × (1 + Waste%/100)<br><span style="color:var(--muted)">Pipe: 5–10% · Insulation: 15%</span></div>
+      <div class="when-text" style="border-left-color:rgba(200,241,53,.4)">Material takeoffs — always add waste factor to net quantities. Running short on site costs more than over-ordering.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PRESSURE ═══════════════════ -->
+<div class="section" id="pressure">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,107,53,.15);border:1px solid rgba(255,107,53,.3)">⬆</div>
+    <div class="section-title" style="color:var(--orange)">PRESSURE</div>
+    <div class="section-line" style="background:var(--orange)"></div>
+  </div>
+  <!-- P·F·A Triangle -->
+  <div class="p-tri">
+    <div style="font-family:var(--font-display);font-size:16px;letter-spacing:.15em;color:var(--blue);margin-bottom:12px">⬡ &nbsp;PRESSURE · FORCE · AREA — THE MAGIC TRIANGLE</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px">
+      <div style="background:var(--bg);border:1px solid var(--dim);border-radius:8px;padding:12px;text-align:center">
+        <div style="font-family:var(--font-display);font-size:18px;color:var(--orange)">PRESSURE</div>
+        <div style="font-family:var(--font-mono);font-size:12px;color:var(--amber);margin-top:6px">P = F ÷ A</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:3px">PSI = lb ÷ in²</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--dim);border-radius:8px;padding:12px;text-align:center">
+        <div style="font-family:var(--font-display);font-size:18px;color:var(--teal)">FORCE</div>
+        <div style="font-family:var(--font-mono);font-size:12px;color:var(--amber);margin-top:6px">F = P × A</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:3px">lb = PSI × in²</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--dim);border-radius:8px;padding:12px;text-align:center">
+        <div style="font-family:var(--font-display);font-size:18px;color:var(--blue)">AREA</div>
+        <div style="font-family:var(--font-mono);font-size:12px;color:var(--amber);margin-top:6px">A = F ÷ P</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:3px">in² = lb ÷ PSI</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);border-left:2px solid rgba(78,201,245,.4);padding-left:10px">Cover the value you want to find — the remaining two values show the formula. Bolt loads, flange ratings, anchor sizing, cap end forces.</div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--orange)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,107,53,.12)">🌍</div><div class="card-name">Atmospheric Pressure</div></div>
+      <div class="formula-box" style="color:var(--orange);font-size:11px;line-height:1.9">14.696 PSI (use 14.7)<br>= 101.325 kPa = 1.01325 bar<br>= 29.92 in Hg = 33.9 ft H₂O</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,53,.4)">The baseline "zero" for gauge pressure readings. At sea level. Decreases with altitude — affects boiling points and steam table accuracy at elevation.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--orange)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,107,53,.12)">📊</div><div class="card-name">Gauge · Absolute · Vacuum</div></div>
+      <div class="formula-box" style="color:var(--orange);font-size:11.5px;line-height:1.9">PSIA = PSIG + 14.7<br>PSIG = PSIA − 14.7<br>PSIG = 0 → PSIA = 14.7 (atm)<br>Below 0 PSIG = vacuum</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,53,.4)">Gauges read PSIG. Steam tables, gas laws, and absolute calcs require PSIA. Always check which unit a formula needs.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--orange)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,107,53,.12)">💧</div><div class="card-name">Head Pressure</div></div>
+      <div class="formula-box" style="color:var(--orange);font-size:11.5px;line-height:1.8">PSI = Height (ft) ÷ 2.31<br>Height (ft) = PSI × 2.31<br><span style="color:var(--muted)">2.31 ft water = 1 PSI</span></div>
+      <div class="when-text" style="border-left-color:rgba(255,107,53,.4)">Static pressure at bottom of water column — pump sizing, gravity feed, elevated tank systems. Every floor (≈10 ft) = +4.33 PSI.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--orange)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,107,53,.12)">⚗️</div><div class="card-name">Pressure–Height–Density</div></div>
+      <div class="formula-box" style="color:var(--orange);font-size:11.5px;line-height:1.8">P (PSI) = Density (lb/ft³) × h (ft) ÷ 144<br><span style="color:var(--muted)">Water ρ=62.4 · Oil ρ≈55 · Glycol ρ≈66</span></div>
+      <div class="when-text" style="border-left-color:rgba(255,107,53,.4)">For fluids other than water, adjust density. Oil, glycol, and brine all have different densities — pressure at depth changes accordingly.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--orange)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,107,53,.12)">🔄</div><div class="card-name">PSI ↔ kPa ↔ Bar</div></div>
+      <div class="formula-box" style="color:var(--orange);font-size:11px;line-height:1.9">kPa = PSI × 6.895<br>PSI = kPa × 0.1450<br>Bar = PSI × 0.06895<br>PSI = Bar × 14.504</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,53,.4)">Canadian specs in kPa, European in bar, US in PSI. Convert before comparing ratings or performing any calculation.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--orange)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,107,53,.12)">💥</div><div class="card-name">Thrust Force at Caps &amp; Bends</div></div>
+      <div class="formula-box" style="color:var(--orange)">Force (lb) = PSI × Area (in²)</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,53,.4)">100 PSI × 4" pipe (12.57 in²) = 1,257 lb on a capped end. Every plugged end, elbow, and reducer needs to be restrained or anchored for this load.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ WATER ═══════════════════ -->
+<div class="section" id="water">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.3)">💧</div>
+    <div class="section-title" style="color:var(--sky)">WATER PROPERTIES &amp; WEIGHT</div>
+    <div class="section-line" style="background:var(--sky)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--sky)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(56,189,248,.12)">🏋️</div><div class="card-name">Water Weight — Key Values</div></div>
+      <div class="formula-box" style="color:var(--sky);font-size:11px;line-height:2.0">1 US gallon &nbsp;&nbsp;= 8.34 lb<br>1 ft³ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 62.4 lb<br>1 Imperial gal = 10.0 lb<br>1 litre &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 1 kg = 2.205 lb</div>
+      <div class="when-text" style="border-left-color:rgba(56,189,248,.4)">Structural loads on floors, hangers, supports. A 500-gal tank full of water = 4,170 lb — always check floor load ratings.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--sky)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(56,189,248,.12)">📏</div><div class="card-name">Water Weight in Pipe per Foot</div></div>
+      <div class="formula-box" style="color:var(--sky)">lb/ft = 0.3405 × ID² (inches)</div>
+      <div class="formula-box" style="color:var(--sky);font-size:10.5px;line-height:1.9;margin-top:4px">2" pipe (ID 2.067) → 1.45 lb/ft<br>4" pipe (ID 4.026) → 5.52 lb/ft<br>6" pipe (ID 6.065) → 12.5 lb/ft</div>
+      <div class="when-text" style="border-left-color:rgba(56,189,248,.4)">Add pipe metal weight + insulation weight for total hanger load. Critical for support spacing design.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--sky)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(56,189,248,.12)">🌡</div><div class="card-name">Pressure per Foot of Head</div></div>
+      <div class="formula-box" style="color:var(--sky);font-size:11.5px;line-height:1.8">0.433 PSI per foot of water<br>PSI = ft ÷ 2.31<br><span style="color:var(--muted)">1 PSI = 2.31 ft of water head</span></div>
+      <div class="when-text" style="border-left-color:rgba(56,189,248,.4)">Every 1 ft rise = 0.433 PSI of static pressure added at the base. Used for pump sizing and elevated system designs.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--sky)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(56,189,248,.12)">🌡</div><div class="card-name">Water Density vs Temperature</div></div>
+      <div class="formula-box" style="color:var(--sky);font-size:10.5px;line-height:1.9">40°F → 62.43 lb/ft³ (max density)<br>60°F → 62.37 lb/ft³ (standard)<br>100°F → 61.99 lb/ft³<br>200°F → 60.13 lb/ft³<br>300°F → 57.31 lb/ft³</div>
+      <div class="when-text" style="border-left-color:rgba(56,189,248,.4)">Hot water is less dense and lighter. High-temp hydronic systems: use temperature-corrected density for accurate hanger loads and pump sizing.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--sky)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(56,189,248,.12)">❄️</div><div class="card-name">Glycol Freeze Protection</div></div>
+      <div class="formula-box" style="color:var(--sky);font-size:10.5px;line-height:1.9">20% EG → −10°F freeze point<br>30% EG → −15°F freeze point<br>40% EG → −25°F freeze point<br>50% EG → −35°F freeze point</div>
+      <div class="when-text" style="border-left-color:rgba(56,189,248,.4)">EG = Ethylene Glycol. Propylene glycol (food-grade) has slightly higher freeze points. Design 10°F below lowest expected ambient temperature.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--sky)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(56,189,248,.12)">💥</div><div class="card-name">Water Hammer — What It Is</div></div>
+      <div class="formula-box" style="color:var(--sky);font-size:11px;line-height:1.8">Fast valve close = pressure spike<br>2" pipe at 5 ft/s → can spike 100+ PSI<br><span style="color:var(--muted)">Use slow-close valves to prevent</span></div>
+      <div class="when-text" style="border-left-color:rgba(56,189,248,.4)">Sudden valve closures create destructive pressure surges. Remedies: slow-close valves, air chambers, expansion tanks, reduced velocity.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ TEMPERATURE ═══════════════════ -->
+<div class="section" id="temperature">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,182,39,.15);border:1px solid rgba(255,182,39,.3)">🌡</div>
+    <div class="section-title" style="color:var(--amber)">TEMPERATURE</div>
+    <div class="section-line" style="background:var(--amber)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">🇺🇸</div><div class="card-name">°F → °C</div></div>
+      <div class="formula-box" style="color:var(--amber)">°C = (°F − 32) × 5/9</div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Converting spec sheets, boiler manuals, thermometers. Freeze=32°F=0°C · Boiling=212°F=100°C.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">🌍</div><div class="card-name">°C → °F</div></div>
+      <div class="formula-box" style="color:var(--amber)">°F = (°C × 9/5) + 32</div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Converting metric temperatures to field gauge readings or imperial spec sheets.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">🔬</div><div class="card-name">°C → Kelvin</div></div>
+      <div class="formula-box" style="color:var(--amber)">K = °C + 273.15</div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Required for ALL gas law calculations. Every "T" in a formula = Kelvin. Never negative — absolute zero = −273.15°C.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--amber)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,182,39,.12)">⚗️</div><div class="card-name">°F → Kelvin (Direct)</div></div>
+      <div class="formula-box" style="color:var(--amber)">K = (°F − 32) × 5/9 + 273.15</div>
+      <div class="when-text" style="border-left-color:rgba(255,182,39,.4)">Direct conversion for gas law problems when starting from a Fahrenheit gauge reading.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ FLOW ═══════════════════ -->
+<div class="section" id="flow">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(78,201,245,.15);border:1px solid rgba(78,201,245,.3)">〰</div>
+    <div class="section-title" style="color:var(--blue)">FLOW &amp; VELOCITY</div>
+    <div class="section-line" style="background:var(--blue)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">🔄</div><div class="card-name">GPM → L/min</div></div>
+      <div class="formula-box" style="color:var(--blue)">L/min = GPM × 3.785</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">US pump specs in GPM, Canadian/metric in L/min. 1 US gallon = 3.785 litres.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">💨</div><div class="card-name">Pipe Velocity</div></div>
+      <div class="formula-box" style="color:var(--blue)">V (ft/s) = GPM × 0.408 ÷ ID²</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">Target: 2–4 ft/s cold water · ≤8 ft/s hot water · ≤15 ft/s steam. High velocity = noise, erosion, water hammer.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">↔️</div><div class="card-name">Continuity Equation</div></div>
+      <div class="formula-box" style="color:var(--blue)">A₁ × V₁ = A₂ × V₂</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">At reducers: smaller pipe = faster flow. Area halved = velocity doubled. Critical check at all size changes.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--blue)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(78,201,245,.12)">🧮</div><div class="card-name">Pipe Volume</div></div>
+      <div class="formula-box" style="color:var(--blue)">Gal = 0.0408 × ID² × Length (ft)</div>
+      <div class="when-text" style="border-left-color:rgba(78,201,245,.4)">System fluid volume for chemical dosing, glycol fill ratio, drain-down time planning.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ STEAM ═══════════════════ -->
+<div class="section" id="steam">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(199,125,255,.15);border:1px solid rgba(199,125,255,.3)">♨</div>
+    <div class="section-title" style="color:var(--purple)">STEAM SYSTEMS</div>
+    <div class="section-line" style="background:var(--purple)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--purple)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(199,125,255,.12)">📖</div><div class="card-name">Saturation Temperature</div></div>
+      <div class="formula-box" style="color:var(--purple)">Steam Tables: PSIA → °F saturation</div>
+      <div class="when-text" style="border-left-color:rgba(199,125,255,.4)">Every steam job — saturation temp tells you if steam is wet, dry, or superheated. Always convert PSIG to PSIA (+14.7) before table lookup.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--purple)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(199,125,255,.12)">💦</div><div class="card-name">Condensate Load</div></div>
+      <div class="formula-box" style="color:var(--purple)">lb/hr = BTU/hr ÷ Latent Heat</div>
+      <div class="when-text" style="border-left-color:rgba(199,125,255,.4)">Size steam traps to handle condensate rate. Trap too small = backup = water hammer. Latent heat ≈ 970 BTU/lb at 15 PSIG.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--purple)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(199,125,255,.12)">🔥</div><div class="card-name">BTU to Heat Water</div></div>
+      <div class="formula-box" style="color:var(--purple)">BTU = Weight (lb) × 1.0 × ΔT (°F)</div>
+      <div class="when-text" style="border-left-color:rgba(199,125,255,.4)">Sizing boilers, heat exchangers, and storage tanks. 1 gallon water = 8.34 lb. Specific heat of water = 1.0 BTU/lb/°F.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--purple)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(199,125,255,.12)">⚡</div><div class="card-name">Steam Velocity Guide</div></div>
+      <div class="formula-box" style="color:var(--purple);font-size:11px;line-height:1.9">Distribution mains: 4,000–8,000 ft/min<br>Branch lines: &nbsp;&nbsp;&nbsp;2,000–4,000 ft/min<br>Condensate return: 100–200 ft/min</div>
+      <div class="when-text" style="border-left-color:rgba(199,125,255,.4)">Too slow = condensate backup. Too fast = erosion, noise, pressure drop. Always check velocity when sizing steam mains.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ OFFSETS ═══════════════════ -->
+<div class="section" id="offsets">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(6,255,165,.15);border:1px solid rgba(6,255,165,.3)">↗</div>
+    <div class="section-title" style="color:var(--teal)">PIPE OFFSETS</div>
+    <div class="section-line" style="background:var(--teal)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--teal)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(6,255,165,.12)">↗</div><div class="card-name">45° Offset Travel</div></div>
+      <div class="formula-box" style="color:var(--teal)">Travel = Offset × 1.414</div>
+      <div class="when-text" style="border-left-color:rgba(6,255,165,.4)">Most common offset in commercial work. √2 = 1.414. Offset = perpendicular distance between parallel pipes.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--teal)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(6,255,165,.12)">↗</div><div class="card-name">22.5° Offset Travel</div></div>
+      <div class="formula-box" style="color:var(--teal)">Travel = Offset × 2.613</div>
+      <div class="when-text" style="border-left-color:rgba(6,255,165,.4)">When 45° elbows won't clear an obstacle. Gentler angle = longer travel piece needed.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--teal)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(6,255,165,.12)">↗</div><div class="card-name">60° Offset Travel</div></div>
+      <div class="formula-box" style="color:var(--teal)">Travel = Offset × 1.155</div>
+      <div class="when-text" style="border-left-color:rgba(6,255,165,.4)">Tight space, steep angle. Steeper angle = shorter travel piece.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--teal)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(6,255,165,.12)">🎲</div><div class="card-name">Rolling Offset (45°)</div></div>
+      <div class="formula-box" style="color:var(--teal)">Travel = √(Offset² + Rise²) × 1.414</div>
+      <div class="when-text" style="border-left-color:rgba(6,255,165,.4)">Multi-plane obstacle avoidance. Find the diagonal with Pythagoras first, then multiply by 1.414.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--teal)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(6,255,165,.12)">⭕</div><div class="card-name">Circumference</div></div>
+      <div class="formula-box" style="color:var(--teal)">C = π × D &nbsp;(π = 3.1416)</div>
+      <div class="when-text" style="border-left-color:rgba(6,255,165,.4)">Wrap-around marking, insulation cutting, branch layout. Always use actual OD, not nominal size.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--teal)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(6,255,165,.12)">🔵</div><div class="card-name">Pipe Cross-Section Area</div></div>
+      <div class="formula-box" style="color:var(--teal)">A = 0.7854 × d²</div>
+      <div class="when-text" style="border-left-color:rgba(6,255,165,.4)">Flow calcs, velocity checks, thrust force at fittings. Use ID (inside) for flow area, OD for external area/pressure calcs.</div>
+    </div>
+  </div>
+  <div class="offset-panel">
+    <h3>⚡ OFFSET MULTIPLIERS AT A GLANCE</h3>
+    <div class="mult-grid">
+      <div class="mult-tile"><div class="mult-deg">22.5°</div><div class="mult-num">× 2.613</div></div>
+      <div class="mult-tile"><div class="mult-deg">30°</div><div class="mult-num">× 2.000</div></div>
+      <div class="mult-tile"><div class="mult-deg">45°</div><div class="mult-num">× 1.414</div></div>
+      <div class="mult-tile"><div class="mult-deg">60°</div><div class="mult-num">× 1.155</div></div>
+    </div>
+    <div class="rolling-box">
+      Rolling Offset: Step 1 → Diagonal = √(Offset² + Rise²)<br>
+      Step 2 → Travel = Diagonal × angle multiplier<br>
+      <span style="color:var(--muted)">Most common: 45° rolling → multiply diagonal × 1.414</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ EXPANSION ═══════════════════ -->
+<div class="section" id="expansion">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,107,157,.15);border:1px solid rgba(255,107,157,.3)">↕</div>
+    <div class="section-title" style="color:var(--pink)">THERMAL EXPANSION</div>
+    <div class="section-line" style="background:var(--pink)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--pink)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,107,157,.12)">📏</div><div class="card-name">Pipe Growth Formula</div></div>
+      <div class="formula-box" style="color:var(--pink)">ΔL = α × L × ΔTemp</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,157,.4)">Hot pipe WILL move — anchors, loops, and flex joints must absorb it.<br>Carbon steel α = 6.5×10⁻⁶/°F ≈ 0.78"/100ft per 100°F<br>Stainless α = 9.9×10⁻⁶/°F · Copper α = 9.3×10⁻⁶/°F</div>
+    </div>
+    <div class="card" style="border-top-color:var(--pink)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,107,157,.12)">🔁</div><div class="card-name">Expansion Loop Size</div></div>
+      <div class="formula-box" style="color:var(--pink)">L (ft) = 0.0275 × √(D × ΔL)</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,157,.4)">D = pipe OD in inches, ΔL = expected expansion in inches. Gives minimum leg length. Undersized loops crack welds and stress anchors.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--pink)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(255,107,157,.12)">🌡</div><div class="card-name">Quick Field Estimate</div></div>
+      <div class="formula-box" style="color:var(--pink)">C-steel ≈ 0.78" per 100 ft per 100°F</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,157,.4)">200 ft steam main, 70°F → 370°F (300°F rise): 200 × 0.78 × 3 = 4.68" total growth. Plan expansion provisions before fabrication.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ GAS LAWS ═══════════════════ -->
+<div class="section" id="gaslaws">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,107,53,.15);border:1px solid rgba(255,107,53,.3)">⚗</div>
+    <div class="section-title" style="color:var(--orange)">GAS LAWS</div>
+    <div class="section-line" style="background:var(--orange)"></div>
+  </div>
+  <div class="alert-box" style="background:rgba(255,107,53,.08);border:1px solid rgba(255,107,53,.25);color:var(--orange)">
+    ⚠ &nbsp;Gas laws ALWAYS require: Pressure in PSIA &nbsp;·&nbsp; Temperature in KELVIN &nbsp;·&nbsp; Volume in consistent units
+  </div>
+  <div class="gas-grid">
+    <div class="gas-card">
+      <div class="gas-law-name">BOYLE'S LAW</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px;font-family:var(--font-mono)">Constant Temperature</div>
+      <div class="formula-box" style="color:var(--orange)">P₁ × V₁ = P₂ × V₂</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,53,.4)">Pressure changes, temperature stays the same. Compressed air systems, nitrogen purging, gas cylinder volumes.<br><em style="color:#6a8aa8">100 PSIA × 10 ft³ → compressed to 200 PSIA: V₂ = 5 ft³</em></div>
+    </div>
+    <div class="gas-card">
+      <div class="gas-law-name">CHARLES' LAW</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px;font-family:var(--font-mono)">Constant Pressure</div>
+      <div class="formula-box" style="color:var(--orange)">V₁ ÷ T₁ = V₂ ÷ T₂</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,53,.4)">Temperature changes, pressure stays same. Expansion tanks, accumulators, seasonal gas volume changes.<br><em style="color:#6a8aa8">10 ft³ at 300K → 600K: V₂ = 20 ft³</em></div>
+    </div>
+    <div class="gas-card">
+      <div class="gas-law-name">COMBINED LAW</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px;font-family:var(--font-mono)">P, V, and T all change</div>
+      <div class="formula-box" style="color:var(--orange)">P₁V₁ ÷ T₁ = P₂V₂ ÷ T₂</div>
+      <div class="when-text" style="border-left-color:rgba(255,107,53,.4)">Most real-world gas problems. Solve for the unknown by rearranging.<br><em style="color:#6a8aa8">V₂ = (P₁ × V₁ × T₂) ÷ (T₁ × P₂)</em></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ FORCE & TESTING ═══════════════════ -->
+<div class="section" id="force">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(122,229,130,.15);border:1px solid rgba(122,229,130,.3)">⚖</div>
+    <div class="section-title" style="color:var(--green)">FORCE, TESTING &amp; HANGERS</div>
+    <div class="section-line" style="background:var(--green)"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:var(--green)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(122,229,130,.12)">🏗</div><div class="card-name">Water Weight in Pipe</div></div>
+      <div class="formula-box" style="color:var(--green)">lb/ft = 0.3405 × ID² (inches)</div>
+      <div class="when-text" style="border-left-color:rgba(122,229,130,.4)">Hanger and support spacing. Water-filled pipe is much heavier than empty. Add pipe metal + insulation for total hanger load.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--green)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(122,229,130,.12)">🧪</div><div class="card-name">Hydrostatic Test Pressure</div></div>
+      <div class="formula-box" style="color:var(--green)">Test = Design Pressure × 1.5</div>
+      <div class="when-text" style="border-left-color:rgba(122,229,130,.4)">After completing any piping system. Verify with code (B31.1, B31.9). ALWAYS bleed all air before testing — trapped air is dangerous.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--green)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(122,229,130,.12)">💥</div><div class="card-name">Thrust Force on Fittings</div></div>
+      <div class="formula-box" style="color:var(--green)">Force (lb) = PSI × Area (in²)</div>
+      <div class="when-text" style="border-left-color:rgba(122,229,130,.4)">100 PSI in 4" pipe = 1,257 lb on a capped end. Size thrust blocks, anchors, and pipe restraints from this value.</div>
+    </div>
+    <div class="card" style="border-top-color:var(--green)">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(122,229,130,.12)">🔩</div><div class="card-name">Flange Bolt Torque Sequence</div></div>
+      <div class="formula-box" style="color:var(--green)">Star pattern: 30% → 70% → 100%</div>
+      <div class="when-text" style="border-left-color:rgba(122,229,130,.4)">Three passes in a star (cross) pattern. NEVER fully torque one bolt at a time — uneven load crushes and blows gaskets.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ OHM & WATT ═══════════════════ -->
+<div class="section" id="electrical">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(129,140,248,.15);border:1px solid rgba(129,140,248,.3)">⚡</div>
+    <div class="section-title" style="color:var(--indigo)">OHM'S LAW &amp; WATT'S LAW</div>
+    <div class="section-line" style="background:var(--indigo)"></div>
+  </div>
+  <div class="alert-box" style="background:rgba(129,140,248,.07);border:1px solid rgba(129,140,248,.25);color:var(--indigo)">
+    ⚡ &nbsp;V = Voltage (volts) &nbsp;·&nbsp; I = Current (amps) &nbsp;·&nbsp; R = Resistance (ohms Ω) &nbsp;·&nbsp; P = Power (watts W)
+  </div>
+  <div class="law-wheel-wrap">
+    <!-- OHM -->
+    <div class="law-wheel" style="border-top:2px solid var(--indigo)">
+      <h3 style="color:var(--indigo)">OHM'S LAW</h3>
+      <div style="font-size:11px;color:var(--muted);font-family:var(--font-mono);margin-bottom:8px">Voltage · Current · Resistance</div>
+      <div class="tf-grid">
+        <div class="tf-box" style="color:var(--indigo)"><div style="font-size:15px;margin-bottom:2px">V</div>V = I × R</div>
+        <div class="tf-box" style="color:var(--indigo)"><div style="font-size:15px;margin-bottom:2px">I</div>I = V ÷ R</div>
+        <div class="tf-box" style="color:var(--indigo)"><div style="font-size:15px;margin-bottom:2px">R</div>R = V ÷ I</div>
+      </div>
+      <div style="background:var(--bg);border-radius:8px;padding:12px;margin-top:4px">
+        <svg width="100%" height="95" viewBox="0 0 260 95">
+          <polygon points="130,6 20,86 240,86" fill="none" stroke="#818CF8" stroke-width="1.5" opacity=".5"/>
+          <rect x="108" y="0" width="44" height="28" rx="6" fill="#818CF8" fill-opacity=".2" stroke="#818CF8" stroke-width="1.5"/>
+          <text x="130" y="19" text-anchor="middle" fill="#818CF8" font-size="16" font-family="'Bebas Neue',sans-serif" letter-spacing="2">V</text>
+          <rect x="14" y="60" width="60" height="26" rx="6" fill="#818CF8" fill-opacity=".1" stroke="#818CF8" stroke-width="1"/>
+          <text x="44" y="77" text-anchor="middle" fill="#A5B4FC" font-size="12" font-family="monospace">I × R</text>
+          <rect x="186" y="60" width="60" height="26" rx="6" fill="#818CF8" fill-opacity=".1" stroke="#818CF8" stroke-width="1"/>
+          <text x="216" y="77" text-anchor="middle" fill="#A5B4FC" font-size="12" font-family="monospace">V ÷ I</text>
+          <line x1="44" y1="60" x2="216" y2="60" stroke="#818CF8" stroke-width="1" opacity=".3"/>
+        </svg>
+        <div style="font-size:10px;color:var(--muted);text-align:center;font-family:var(--font-mono)">Cover what you want → remaining values show the formula</div>
+      </div>
+      <div class="when-text" style="border-left-color:rgba(129,140,248,.5);margin-top:8px;font-size:11.5px">Checking motor voltage, troubleshooting control circuits, sizing fuses, understanding electrical drawings on steam and HVAC equipment.</div>
+    </div>
+    <!-- WATT -->
+    <div class="law-wheel" style="border-top:2px solid var(--gold)">
+      <h3 style="color:var(--gold)">WATT'S LAW</h3>
+      <div style="font-size:11px;color:var(--muted);font-family:var(--font-mono);margin-bottom:8px">Power · Voltage · Current</div>
+      <div class="tf-grid">
+        <div class="tf-box" style="color:var(--gold)"><div style="font-size:15px;margin-bottom:2px">P</div>P = V × I</div>
+        <div class="tf-box" style="color:var(--gold)"><div style="font-size:15px;margin-bottom:2px">V</div>V = P ÷ I</div>
+        <div class="tf-box" style="color:var(--gold)"><div style="font-size:15px;margin-bottom:2px">I</div>I = P ÷ V</div>
+      </div>
+      <div style="background:var(--bg);border-radius:8px;padding:12px;margin-top:4px">
+        <svg width="100%" height="95" viewBox="0 0 260 95">
+          <polygon points="130,6 20,86 240,86" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity=".5"/>
+          <rect x="108" y="0" width="44" height="28" rx="6" fill="#F59E0B" fill-opacity=".2" stroke="#F59E0B" stroke-width="1.5"/>
+          <text x="130" y="19" text-anchor="middle" fill="#F59E0B" font-size="16" font-family="'Bebas Neue',sans-serif" letter-spacing="2">P</text>
+          <rect x="14" y="60" width="60" height="26" rx="6" fill="#F59E0B" fill-opacity=".1" stroke="#F59E0B" stroke-width="1"/>
+          <text x="44" y="77" text-anchor="middle" fill="#FCD34D" font-size="12" font-family="monospace">V × I</text>
+          <rect x="186" y="60" width="60" height="26" rx="6" fill="#F59E0B" fill-opacity=".1" stroke="#F59E0B" stroke-width="1"/>
+          <text x="216" y="77" text-anchor="middle" fill="#FCD34D" font-size="12" font-family="monospace">P ÷ V</text>
+          <line x1="44" y1="60" x2="216" y2="60" stroke="#F59E0B" stroke-width="1" opacity=".3"/>
+        </svg>
+        <div style="font-size:10px;color:var(--muted);text-align:center;font-family:var(--font-mono)">Cover what you want → remaining values show the formula</div>
+      </div>
+      <div class="when-text" style="border-left-color:rgba(245,158,11,.5);margin-top:8px;font-size:11.5px">Converting kW boiler rating to amps, sizing breakers for heat trace, understanding power consumption of pumps and motors.</div>
+    </div>
+  </div>
+  <!-- All 12 combinations -->
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:14px">
+    <div style="font-family:var(--font-display);font-size:16px;letter-spacing:.18em;color:#c8d0f8;margin-bottom:14px">⚡ ALL 12 COMBINATIONS — OHM + WATT</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px">
+      <div style="background:var(--bg);border:1px solid rgba(129,140,248,.2);border-radius:7px;padding:10px">
+        <div style="font-size:9px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.2em;margin-bottom:6px">FIND VOLTAGE (V)</div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--indigo);line-height:1.9">V = I × R<br>V = P ÷ I<br>V = √(P × R)</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid rgba(129,140,248,.2);border-radius:7px;padding:10px">
+        <div style="font-size:9px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.2em;margin-bottom:6px">FIND CURRENT (I)</div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--indigo);line-height:1.9">I = V ÷ R<br>I = P ÷ V<br>I = √(P ÷ R)</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid rgba(129,140,248,.2);border-radius:7px;padding:10px">
+        <div style="font-size:9px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.2em;margin-bottom:6px">FIND RESISTANCE (R)</div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--indigo);line-height:1.9">R = V ÷ I<br>R = V² ÷ P<br>R = P ÷ I²</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid rgba(245,158,11,.2);border-radius:7px;padding:10px">
+        <div style="font-size:9px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.2em;margin-bottom:6px">FIND POWER (P)</div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--gold);line-height:1.9">P = V × I<br>P = I² × R<br>P = V² ÷ R</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;font-size:11px;color:var(--muted);border-left:2px solid rgba(129,140,248,.4);padding-left:10px">
+      Pipefitters encounter electrical on: pump motors, control panels, electric heat trace, immersion heaters, solenoid valves, and actuators. These 12 formulas cover every combination.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CONSTANTS ═══════════════════ -->
+<div class="section" id="constants">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(255,182,39,.15);border:1px solid rgba(255,182,39,.3)">★</div>
+    <div class="section-title" style="color:var(--amber)">KEY CONSTANTS</div>
+    <div class="section-line" style="background:var(--amber)"></div>
+  </div>
+  <div class="const-table">
+    <div class="const-row" style="background:rgba(255,182,39,.08)">
+      <div style="font-family:var(--font-mono);font-size:9.5px;letter-spacing:.2em;color:var(--muted)">VALUE</div>
+      <div style="font-family:var(--font-mono);font-size:9.5px;letter-spacing:.2em;color:var(--muted)">NUMBER</div>
+      <div style="font-family:var(--font-mono);font-size:9.5px;letter-spacing:.2em;color:var(--muted)">NOTES</div>
+    </div>
+    <div class="const-row"><div class="const-label">π (pi)</div><div class="const-val">3.1416</div><div class="const-note">C = π×D · Area = π×r² = 0.7854×d²</div></div>
+    <div class="const-row"><div class="const-label">√2</div><div class="const-val">1.4142</div><div class="const-note">45° offset multiplier</div></div>
+    <div class="const-row"><div class="const-label">1 US gallon (water)</div><div class="const-val">8.34 lb</div><div class="const-note">Weight of water</div></div>
+    <div class="const-row"><div class="const-label">1 ft³ of water</div><div class="const-val">62.4 lb</div><div class="const-note">Weight of water per cubic foot</div></div>
+    <div class="const-row"><div class="const-label">Water pressure per ft</div><div class="const-val">0.433 PSI</div><div class="const-note">1 PSI = 2.31 ft head</div></div>
+    <div class="const-row"><div class="const-label">Atmospheric pressure</div><div class="const-val">14.7 PSI</div><div class="const-note">= 101.3 kPa = 1.013 bar = 29.92 in Hg</div></div>
+    <div class="const-row"><div class="const-label">C-steel expansion</div><div class="const-val">0.78"/100ft</div><div class="const-note">Per 100°F temperature rise</div></div>
+    <div class="const-row"><div class="const-label">Steam latent heat</div><div class="const-val">~970 BTU/lb</div><div class="const-note">At 15 PSIG — decreases at higher pressure</div></div>
+    <div class="const-row"><div class="const-label">Specific heat of water</div><div class="const-val">1.0 BTU/lb/°F</div><div class="const-note">Used in all heat-up calculations</div></div>
+    <div class="const-row"><div class="const-label">Boiler horsepower</div><div class="const-val">33,475 BTU/hr</div><div class="const-note">Old unit still on equipment nameplates</div></div>
+    <div class="const-row"><div class="const-label">1 kilowatt</div><div class="const-val">3,412 BTU/hr</div><div class="const-note">Power → heat conversion</div></div>
+    <div class="const-row"><div class="const-label">1 ton refrigeration</div><div class="const-val">12,000 BTU/hr</div><div class="const-note">Chiller and cooling system sizing</div></div>
+    <div class="const-row"><div class="const-label">1% grade</div><div class="const-val">⅛" per foot</div><div class="const-note">Pipe slope: 1% = ⅛"/ft</div></div>
+    <div class="const-row"><div class="const-label">Min drain slope</div><div class="const-val">¼" per foot</div><div class="const-note">2% grade — typical code minimum</div></div>
+    <div class="const-row"><div class="const-label">1 ft³</div><div class="const-val">7.481 US gal</div><div class="const-note">Volume conversion</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CONVERSIONS ═══════════════════ -->
+<div class="section" id="conversions">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(168,218,220,.15);border:1px solid rgba(168,218,220,.3)">⇄</div>
+    <div class="section-title" style="color:#A8DADC">UNIT CONVERSIONS</div>
+    <div class="section-line" style="background:#A8DADC"></div>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top-color:#A8DADC">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(168,218,220,.12)">📏</div><div class="card-name">Length</div></div>
+      <div class="formula-box" style="color:#A8DADC;font-size:11.5px;line-height:1.8">1 ft = 12 in = 0.3048 m<br>1 m = 3.281 ft · 1 in = 25.4 mm</div>
+      <div class="when-text" style="border-left-color:rgba(168,218,220,.4)">Metric drawings, international equipment. DN50 ≈ 2" nominal pipe.</div>
+    </div>
+    <div class="card" style="border-top-color:#A8DADC">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(168,218,220,.12)">🪣</div><div class="card-name">Volume</div></div>
+      <div class="formula-box" style="color:#A8DADC;font-size:11.5px;line-height:1.8">1 US gal = 3.785 L<br>1 ft³ = 7.481 US gal<br>1 Imp gal = 1.2 US gal</div>
+      <div class="when-text" style="border-left-color:rgba(168,218,220,.4)">Chemical treatment, tank sizing. US ≠ Imperial gallons — concentrations can be dangerously wrong if mixed up.</div>
+    </div>
+    <div class="card" style="border-top-color:#A8DADC">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(168,218,220,.12)">⚖️</div><div class="card-name">Mass / Weight</div></div>
+      <div class="formula-box" style="color:#A8DADC;font-size:11.5px;line-height:1.8">1 lb = 0.4536 kg<br>1 kg = 2.205 lb<br>1 short ton = 2,000 lb</div>
+      <div class="when-text" style="border-left-color:rgba(168,218,220,.4)">Equipment rigging, boiler capacity. Short ton (US) = 2,000 lb. Metric tonne = 2,205 lb.</div>
+    </div>
+    <div class="card" style="border-top-color:#A8DADC">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(168,218,220,.12)">⚡</div><div class="card-name">Power &amp; Heat</div></div>
+      <div class="formula-box" style="color:#A8DADC;font-size:11.5px;line-height:1.8">1 kW = 3,412 BTU/hr<br>1 Ton = 12,000 BTU/hr<br>Boiler HP = 33,475 BTU/hr</div>
+      <div class="when-text" style="border-left-color:rgba(168,218,220,.4)">Comparing boiler ratings, HX capacity, chiller sizing. 100 kW boiler = 341,200 BTU/hr.</div>
+    </div>
+    <div class="card card-2" style="border-top-color:#A8DADC">
+      <div class="card-top"><div class="card-emoji" style="background:rgba(168,218,220,.12)">🔧</div><div class="card-name">Nominal Pipe Size vs Actual OD — CRITICAL</div></div>
+      <div class="formula-box" style="color:#A8DADC;font-size:11px;line-height:1.9">½" NPS → 0.840" OD &nbsp;&nbsp; 1" NPS → 1.315" OD &nbsp;&nbsp; 1½" NPS → 1.900" OD<br>2" NPS → 2.375" OD &nbsp;&nbsp; 3" NPS → 3.500" OD &nbsp;&nbsp; 4" NPS → 4.500" OD<br>6" NPS → 6.625" OD &nbsp;&nbsp; 8" NPS → 8.625" OD &nbsp;&nbsp; 10" NPS → 10.750" OD</div>
+      <div class="when-text" style="border-left-color:rgba(168,218,220,.4)">ALWAYS — nominal size ≠ actual OD. Critical for fitting selection, welding preps, threading, and insulation takeoffs. Pipe ID depends on Schedule. Schedule 40 is most common.</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<div class="ad-slot-bottom">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5932083189692902" data-ad-slot="0000000000" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="footer">
+  Always verify against applicable codes: B31.1 · B31.9 · ASME · CEC/NEC (electrical) · Local AHJ · Manufacturer Specifications
+</div>
+
+<script>
+  (function(){ var d=document.getElementsByClassName('adsbygoogle'); for(var i=0;i<d.length;i++){(window.adsbygoogle=window.adsbygoogle||[]).push({}); }})();
+</script>
+<script>
+  const sections = document.querySelectorAll('.section');
+  const tabs = document.querySelectorAll('.tab');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tabs.forEach(t => t.classList.remove('active'));
+        const m = document.querySelector(`.tab[href="#${e.target.id}"]`);
+        if (m) m.classList.add('active');
+      }
+    });
+  }, { threshold: 0.2 });
+  sections.forEach(s => obs.observe(s));
+
+  const els = document.querySelectorAll('.card,.gas-card,.shape-card,.const-table,.offset-panel,.law-wheel,.p-tri');
+  const co = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        co.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  els.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = `opacity 0.4s ease ${i * 0.025}s, transform 0.4s ease ${i * 0.025}s`;
+    co.observe(el);
+  });
+</script>
+</body>
+</html>

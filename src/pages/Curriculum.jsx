@@ -59,7 +59,14 @@ export default function Curriculum() {
     {
       title: "Alberta Apprenticeship and Industry Training",
       description: "Official AIT website for apprenticeship information and resources",
-      url: "https://tradesecrets.alberta.ca/"
+      url: "https://tradesecrets.alberta.ca/",
+      external: true
+    },
+    {
+      title: "Complete First Year Field Reference — SKILLED TRADES",
+      description: "Free first-year field reference: geometry, pressure, flow, offsets, gas laws, electrical formulas for steamfitter/pipefitter and skilled trades.",
+      url: "/complete-first-year-field-reference.html",
+      external: false
     }
   ];
 
@@ -156,7 +163,9 @@ export default function Curriculum() {
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Helpful Resource Links</h2>
           <p className="text-slate-600 mb-6">
-            Access official Alberta AIT resources and program information
+            Access official Alberta AIT resources and program information in the Curriculums page for every trade{' '}
+            <a href="https://www.tradebenchprep.org/Curriculum" className="text-blue-600 hover:underline">https://www.tradebenchprep.org/Curriculum</a>
+            {' '}alongside the following resources.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {officialLinks.map((link, index) => (
@@ -169,15 +178,24 @@ export default function Curriculum() {
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-slate-900 mb-1">{link.title}</h3>
                       <p className="text-sm text-slate-600 mb-3">{link.description}</p>
-                      <a
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 font-medium"
-                      >
-                        Visit Website
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
+                      {link.external ? (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 font-medium"
+                        >
+                          Visit Website
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      ) : (
+                        <a
+                          href={link.url}
+                          className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 font-medium"
+                        >
+                          Open Field Reference
+                        </a>
+                      )}
                     </div>
                   </div>
                 </CardContent>
