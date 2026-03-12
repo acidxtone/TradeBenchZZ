@@ -22,10 +22,13 @@ export default function LandingPage() {
             </div>
             <span className="text-xl font-bold text-slate-900">TradeBenchPrep</span>
           </div>
-          <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleGetStarted}>
-            Get Started
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
+          <div className="flex items-center gap-3">
+            <a href="/jobs.html" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">Job Board</a>
+            <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleGetStarted}>
+              Get Started
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
         </div>
       </nav>
 

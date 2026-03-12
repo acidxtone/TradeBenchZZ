@@ -2,6 +2,7 @@
   "rewrites": [
     {"source": "/sitemap.xml", "destination": "/sitemap.xml"},
     {"source": "/robots.txt", "destination": "/robots.txt"},
+    {"source": "/jobs", "destination": "/jobs.html"},
     {"source": "/trades", "destination": "/trades/index.html"},
     {"source": "/trades/:trade", "destination": "/trades/:trade/index.html"},
     {"source": "/trades/:trade/year-:num", "destination": "/trades/:trade/year-:num/index.html"},

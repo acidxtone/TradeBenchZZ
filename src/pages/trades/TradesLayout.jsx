@@ -42,6 +42,7 @@ export default function TradesLayout({ children, breadcrumb }) {
             <Link to="/trades" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
               Trades
             </Link>
+            <a href="/jobs.html" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">Job Board</a>
             <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleGetStarted}>
               Get Started
               <ArrowRight className="w-4 h-4 ml-2" />
