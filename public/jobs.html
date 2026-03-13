@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Canadian Skilled Trades Job Board | TradeBenchPrep | Pipefitter, Electrician, Millwright, Welder Jobs</title>
-  <meta name="description" content="Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated every 5 days. Part of TradeBenchPrep." />
-  <meta name="keywords" content="Canadian skilled trades jobs, pipefitter jobs Canada, electrician jobs Canada, millwright jobs, welder jobs, apprenticeship jobs, steamfitter jobs, trade jobs Canada" />
+  <meta name="description" content="Browse Canadian skilled trades job postings updated weekly. Find Pipefitter, Steamfitter, Electrician, Millwright and Welder jobs across Alberta, BC, Ontario, Saskatchewan and more. Apprentice and journeyman levels." />
+  <meta name="keywords" content="pipefitter jobs Canada, steamfitter jobs Alberta, electrician jobs BC, millwright jobs Canada, welder jobs Alberta, trades jobs Canada, apprentice jobs Canada, journeyman jobs Canada, Red Seal jobs" />
   <meta name="author" content="TradeBenchPrep" />
   <meta name="robots" content="index, follow" />
   <meta name="geo.region" content="CA" />
@@ -15,8 +15,8 @@
   <link rel="canonical" href="https://www.tradebenchprep.org/jobs.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Canadian Skilled Trades Job Board | TradeBenchPrep" />
-  <meta property="og:description" content="Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated every 5 days." />
+  <meta property="og:title" content="Trades Job Board — TradeBenchPrep" />
+  <meta property="og:description" content="Weekly updated Canadian skilled trades job postings for Pipefitter, Steamfitter, Electrician, Millwright and Welder — apprentice and journeyman levels across all provinces." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.tradebenchprep.org/jobs.html" />
   <meta property="og:image" content="https://www.tradebenchprep.org/favicon.png" />
@@ -196,7 +196,57 @@
       max-width: 540px;
       margin: 0 auto;
     }
-
+    /* ── About this job board (info banner) ── */
+    .about-job-board {
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      padding: 1rem 1.25rem;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    /* ── How it works (three-step row, match homepage) ── */
+    .how-it-works {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+      padding: 1.25rem 0;
+    }
+    .how-it-works .step { text-align: center; }
+    .how-it-works .step-num {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+    }
+    .how-it-works .step h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.35rem; }
+    .how-it-works .step p { font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+    /* ── Disclaimer bar above footer ── */
+    .disclaimer-bar {
+      width: 100%;
+      padding: 0.85rem 1.5rem;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .how-it-works { grid-template-columns: 1fr; gap: 1rem; }
+    }
     /* ── AD SLOTS (top/bottom/sidebar/inline — don’t block content) ── */
     .ad-slot {
       background: var(--white);
@@ -474,6 +524,15 @@
       color: var(--text);
     }
     .trade-links { display: flex; flex-direction: column; gap: 0.4rem; }
+    .trade-snapshot-list {
+      list-style: none;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+    .trade-snapshot-list li { margin-bottom: 0.9rem; }
+    .trade-snapshot-list li:last-child { margin-bottom: 0; }
+    .trade-snapshot-list strong { color: var(--text); font-weight: 600; }
     .trade-link-btn {
       display: flex;
       align-items: center;
@@ -590,6 +649,10 @@
   <p>Pipefitter, Steamfitter, Electrician, Millwright &amp; Welder postings updated weekly from across Canada.</p>
 </section>
 
+<div class="about-job-board">
+  This job board aggregates public skilled trades job postings from across Canada and refreshes every week automatically. It covers four trades — Pipefitter/Steamfitter, Electrician, Millwright, and Welder — at both the apprentice and journeyman level. Postings are pulled from public sources and filtered for Canadian locations. Use the filters to narrow by trade, province, and experience level. Click any posting to view the full listing on the original source. New postings appear every Monday.
+</div>
+
 <div class="page-wrap">
   <main>
     <!-- Top ad: below hero. Set data-ad-slot to your AdSense unit ID to enable. -->
@@ -601,6 +664,24 @@
            data-ad-format="horizontal"
            data-full-width-responsive="true"></ins>
     </section>
+
+    <div class="how-it-works">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Pick your trade and province</h3>
+        <p>Use the filters at the top to narrow postings by trade, province, and experience level.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Browse weekly listings</h3>
+        <p>Postings are refreshed every Monday from public sources across Canada. New listings appear at the top.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Apply directly</h3>
+        <p>Click "View Job" on any card to go directly to the original posting and apply with the employer.</p>
+      </div>
+    </div>
 
     <div class="filters-bar">
       <div class="filters-row filters-row-search">
@@ -685,6 +766,16 @@
       <div class="trade-links" id="trade-nav"></div>
     </div>
 
+    <div class="sidebar-card">
+      <h3>Trade Market Snapshot</h3>
+      <ul class="trade-snapshot-list">
+        <li><strong>Pipefitter / Steamfitter</strong> — Demand is strongest in Alberta and BC, driven by oil sands, LNG, and industrial maintenance shutdowns. UA union signatory shops are the primary employers. Knowing your local and having your H2S Alive and CSTS tickets ready is expected.</li>
+        <li><strong>Electrician</strong> — One of the highest-volume trades in Canada. Commercial and industrial sectors lead hiring. IBEW signatory shops dominate in major metros. Red Seal or provincial JM ticket required for most journeyman postings.</li>
+        <li><strong>Millwright</strong> — Strong demand in resource extraction, forestry, and food processing. Alberta and BC lead postings. Rotating shift work is common. Preventative maintenance experience is a major asset.</li>
+        <li><strong>Welder</strong> — Pipeline and structural welding lead the market. CWB certification is the baseline requirement. Alberta has the highest concentration of postings. Camp-based work with per diem is common for pipeline contracts.</li>
+      </ul>
+    </div>
+
     <div class="sidebar-card cta-card">
       <h3>Preparing for your ticket?</h3>
       <p>Practice exams, study guides, and progress tracking for all four trades — free forever.</p>
@@ -702,6 +793,10 @@
        data-ad-format="horizontal"
        data-full-width-responsive="true"></ins>
 </section>
+
+<div class="disclaimer-bar">
+  Job postings displayed on this page are sourced from publicly available listings across Canada and are updated automatically on a weekly basis. TradeBenchPrep does not create, endorse, or verify any job posting or employer listed here. Always confirm the details of any posting directly with the employer before applying. If a link appears outdated or incorrect, it will be replaced during the next weekly refresh.
+</div>
 
 <footer>
   <div class="footer-inner">
