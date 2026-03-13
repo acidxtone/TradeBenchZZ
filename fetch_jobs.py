@@ -2,6 +2,8 @@
 """
 Fetch Canadian skilled trades job postings via Google Custom Search API
 and write public/jobs.json. Intended to run every 5 days via GitHub Actions.
+- Loads existing jobs.json (if present), merges in new API results by URL,
+  prunes entries older than 30 days, then writes back. No backend required.
 Requires env: GOOGLE_API_KEY, GOOGLE_CX.
 Extracts province and city/town when possible for specific location display.
 """
@@ -11,6 +13,7 @@ import re
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from datetime import datetime, timezone, timedelta
 
 API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 CX = os.environ.get("GOOGLE_CX", "")
@@ -61,6 +64,7 @@ CITIES = [
 ]
 
 OUTPUT_PATH = Path(__file__).resolve().parent / "public" / "jobs.json"
+RETENTION_DAYS = 30  # Drop jobs older than this many days
 
 
 def search(query: str, start: int = 1) -> list:
@@ -173,10 +177,39 @@ def item_to_job(
     }
 
 
-def main():
-    seen_urls = set()
-    jobs = []
+def _load_existing_jobs():
+    """Load existing jobs from jobs.json if present. Return list of job dicts."""
+    if not OUTPUT_PATH.exists():
+        return []
+    try:
+        with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, list) else []
+    except (json.JSONDecodeError, OSError):
+        return []
 
+
+def _parse_posted_date(posted_str):
+    """Parse posted string (YYYY-MM-DD or partial) to date. Return None if invalid."""
+    if not posted_str or not isinstance(posted_str, str):
+        return None
+    posted_str = posted_str.strip()[:10]
+    try:
+        return datetime.strptime(posted_str, "%Y-%m-%d").date()
+    except ValueError:
+        return None
+
+
+def main():
+    cutoff = (datetime.now(tz=timezone.utc) - timedelta(days=RETENTION_DAYS)).date()
+
+    # Load existing jobs (from last run) and index by URL
+    existing_list = _load_existing_jobs()
+    existing_by_url = {j.get("url"): j for j in existing_list if j.get("url")}
+
+    # Fetch new results from API (this run only)
+    seen_urls = set()
+    new_jobs = []
     for query in QUERIES:
         trade = "electrician"
         for t in TRADES:
@@ -195,18 +228,39 @@ def main():
                     try:
                         job = item_to_job(item, trade, level, province_from_query=province_from_query)
                         if not job.get("posted"):
-                            from datetime import datetime, timezone
                             job["posted"] = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
-                        jobs.append(job)
+                        new_jobs.append(job)
                     except (IndexError, KeyError, TypeError):
                         pass
             if len(items) < 10:
                 break
 
+    # Merge: add new jobs that aren't already in existing (by URL)
+    for job in new_jobs:
+        url = job.get("url")
+        if url and url not in existing_by_url:
+            existing_by_url[url] = job
+
+    # Prune: keep only jobs with posted date within last RETENTION_DAYS
+    today = datetime.now(tz=timezone.utc).date()
+    combined = []
+    for job in existing_by_url.values():
+        posted_str = job.get("posted") or ""
+        posted_date = _parse_posted_date(posted_str)
+        if posted_date is None:
+            # Keep if we can't parse (e.g. empty or odd format)
+            combined.append(job)
+            continue
+        if (today - posted_date).days <= RETENTION_DAYS:
+            combined.append(job)
+
+    # Sort newest first
+    combined.sort(key=lambda j: (j.get("posted") or ""), reverse=True)
+
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(jobs, f, indent=2, ensure_ascii=False)
-    print(f"Wrote {len(jobs)} jobs to {OUTPUT_PATH}")
+        json.dump(combined, f, indent=2, ensure_ascii=False)
+    print(f"Wrote {len(combined)} jobs to {OUTPUT_PATH} (kept <= {RETENTION_DAYS} days, merged {len(new_jobs)} new)")
 
 
 if __name__ == "__main__":
