@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Target, Zap, CheckCircle, ArrowRight, Briefcase } from "lucide-react";
+import { SiteNavLinks } from '@/components/SiteNavLinks';
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import AnonymousSession from '@/lib/AnonymousSession';
 
@@ -23,7 +24,7 @@ export default function LandingPage() {
             <span className="text-xl font-bold text-slate-900">TradeBenchPrep</span>
           </div>
           <div className="flex items-center gap-3">
-            <a href="/jobs.html" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">Job Board</a>
+            <SiteNavLinks />
             <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleGetStarted}>
               Get Started
               <ArrowRight className="w-4 h-4 ml-2" />

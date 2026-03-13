@@ -2,7 +2,8 @@
   {
     "title": "Electrician – Industrial",
     "company": "Job Bank Canada",
-    "location": "Various locations, Canada",
+    "location": "Toronto, Ontario, Canada",
+    "city": "Toronto",
     "province": "ON",
     "trade": "electrician",
     "level": "Journeyman",
@@ -14,7 +15,8 @@
   {
     "title": "Pipefitter / Steamfitter",
     "company": "Job Bank Canada",
-    "location": "Various locations, Canada",
+    "location": "Calgary, Alberta, Canada",
+    "city": "Calgary",
     "province": "AB",
     "trade": "pipefitter",
     "level": "Journeyman",
@@ -26,7 +28,8 @@
   {
     "title": "Millwright",
     "company": "Job Bank Canada",
-    "location": "Various locations, Canada",
+    "location": "Vancouver, British Columbia, Canada",
+    "city": "Vancouver",
     "province": "BC",
     "trade": "millwright",
     "level": "Journeyman",
@@ -38,7 +41,8 @@
   {
     "title": "Welder",
     "company": "Job Bank Canada",
-    "location": "Various locations, Canada",
+    "location": "Saskatoon, Saskatchewan, Canada",
+    "city": "Saskatoon",
     "province": "SK",
     "trade": "welder",
     "level": "Journeyman",
@@ -50,8 +54,9 @@
   {
     "title": "Apprentice Electrician",
     "company": "Indeed Canada",
-    "location": "Canada",
-    "province": "",
+    "location": "Ontario, Canada",
+    "city": "",
+    "province": "ON",
     "trade": "electrician",
     "level": "Apprentice",
     "type": "Full-time",
@@ -62,8 +67,9 @@
   {
     "title": "Apprentice Pipefitter / Steamfitter",
     "company": "Indeed Canada",
-    "location": "Canada",
-    "province": "",
+    "location": "Edmonton, Alberta, Canada",
+    "city": "Edmonton",
+    "province": "AB",
     "trade": "pipefitter",
     "level": "Apprentice",
     "type": "Full-time",

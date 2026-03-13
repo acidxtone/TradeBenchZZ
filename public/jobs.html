@@ -843,7 +843,8 @@
     });
 
     const filtered = allJobs.filter(function(job) {
-      var matchSearch   = !search || [job.title, job.company, job.location, job.description].join(' ').toLowerCase().indexOf(search) !== -1;
+      var searchable = [job.title, job.company, job.location, job.description, job.city || ''].join(' ');
+      var matchSearch   = !search || searchable.toLowerCase().indexOf(search) !== -1;
       var matchTrade    = !trade || job.trade === trade;
       var matchProvince = !province || job.province === province;
       var matchLevel    = !level || job.level === level;

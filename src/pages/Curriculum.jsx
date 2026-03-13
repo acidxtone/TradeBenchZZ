@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ExternalLink, GraduationCap } from "lucide-react";
 import { useAuth } from '@/lib/AuthContext';
 import { getSectionsForTradeYear, getTradeLabel } from '@/lib/trade-config';
+import { SiteNavLinks } from '@/components/SiteNavLinks';
 
 const COLOR_CLASSES = {
   blue: 'bg-blue-100 text-blue-700 border-blue-200',
@@ -74,11 +75,12 @@ export default function Curriculum() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
         <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between flex-wrap gap-2">
             <Link to={createPageUrl('Dashboard')} className="inline-flex items-center text-slate-600 hover:text-slate-900">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Dashboard
             </Link>
+            <SiteNavLinks />
           </div>
         </header>
         <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -106,13 +108,12 @@ export default function Curriculum() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link to={createPageUrl('Dashboard')} className="inline-flex items-center text-slate-600 hover:text-slate-900">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Dashboard
-            </Link>
-          </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between flex-wrap gap-2">
+          <Link to={createPageUrl('Dashboard')} className="inline-flex items-center text-slate-600 hover:text-slate-900">
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Dashboard
+          </Link>
+          <SiteNavLinks />
         </div>
       </header>
 

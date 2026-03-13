@@ -5,6 +5,7 @@ import { Home, Calendar } from 'lucide-react';
 import YearIndicator from '@/components/YearIndicator';
 import { createPageUrl } from '@/utils';
 import { getTradeLabel } from '@/lib/trade-config';
+import { SiteNavLinks } from '@/components/SiteNavLinks';
 
 const YearHeader = () => {
   const { user } = useAuth();
@@ -13,13 +14,18 @@ const YearHeader = () => {
 
   return (
     <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-2 px-4 shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-2">
+        <div className="flex items-center gap-4 flex-wrap">
           <Link to={createPageUrl('Dashboard')} className="flex items-center gap-2 hover:text-blue-100 transition-colors">
             <Home className="h-4 w-4" />
             <span className="text-sm font-bold tracking-tight">TradeBenchPrep</span>
           </Link>
-          <span className="text-blue-200 opacity-50">•</span>
+          <span className="text-blue-200 opacity-50 hidden sm:inline">•</span>
+          <SiteNavLinks
+            linkClassName="text-xs font-medium text-white/90 hover:text-white transition-colors"
+            wrapperClassName="flex items-center gap-3"
+          />
+          <span className="text-blue-200 opacity-50 hidden sm:inline">•</span>
           <div className="flex items-center gap-2">
             <span className="text-xs font-medium text-blue-100">{getTradeLabel(trade)}</span>
             <span className="text-blue-200 opacity-50">·</span>

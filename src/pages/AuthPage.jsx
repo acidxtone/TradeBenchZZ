@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, ArrowLeft, Eye, EyeOff, Loader2, ChevronDown } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom';
+import { SiteNavLinks } from '@/components/SiteNavLinks';
 import { createPageUrl } from '@/utils';
 
 const SECURITY_QUESTIONS = [
@@ -202,19 +203,22 @@ export default function AuthPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex flex-col">
       <nav className="bg-white/80 backdrop-blur-md border-b border-slate-100">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between flex-wrap gap-2">
           <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <BookOpen className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-slate-900">TradeBenchPrep</span>
           </Link>
-          <Link to="/">
-            <Button variant="ghost" className="text-slate-600">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
-            </Button>
-          </Link>
+          <div className="flex items-center gap-3">
+            <SiteNavLinks />
+            <Link to="/">
+              <Button variant="ghost" className="text-slate-600">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back
+              </Button>
+            </Link>
+          </div>
         </div>
       </nav>
 

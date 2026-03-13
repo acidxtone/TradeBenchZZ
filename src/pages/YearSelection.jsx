@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { api } from '@/lib/api-client';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, CheckCircle } from "lucide-react";
+import { GraduationCap, CheckCircle, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from '@/lib/AuthContext';
 import { getYearsForTrade } from '@/lib/trade-config';
+import { SiteNavLinks } from '@/components/SiteNavLinks';
 
 const YEAR_LABELS = { 1: "First Year", 2: "Second Year", 3: "Third Year", 4: "Fourth Year" };
 const YEAR_DESC = { 1: "Foundation and basics", 2: "Building on fundamentals", 3: "Advanced techniques", 4: "Mastery and specialization" };
@@ -65,6 +66,17 @@ export default function YearSelection() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col p-4">
+      <nav className="bg-white/5 border-b border-white/10 mb-4">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-2">
+          <Link to="/" className="flex items-center gap-2 text-white hover:text-white/90">
+            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+              <BookOpen className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-lg font-bold">TradeBenchPrep</span>
+          </Link>
+          <SiteNavLinks linkClassName="text-sm text-white/80 hover:text-white transition-colors" />
+        </div>
+      </nav>
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}

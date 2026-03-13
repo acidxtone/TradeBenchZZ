@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { BookOpen, ArrowRight } from 'lucide-react';
+import { SiteNavLinks } from '@/components/SiteNavLinks';
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import AnonymousSession from '@/lib/AnonymousSession';
 
@@ -36,13 +37,7 @@ export default function TradesLayout({ children, breadcrumb }) {
             {breadcrumb}
           </div>
           <div className="flex items-center gap-3">
-            <Link to="/" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
-              Home
-            </Link>
-            <Link to="/trades" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
-              Trades
-            </Link>
-            <a href="/jobs.html" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">Job Board</a>
+            <SiteNavLinks />
             <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleGetStarted}>
               Get Started
               <ArrowRight className="w-4 h-4 ml-2" />

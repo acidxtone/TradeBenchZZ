@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BookOpen } from 'lucide-react';
 import { BannerAd } from '@/components/ads/AdSense';
+import { SiteNavLinks } from '@/components/SiteNavLinks';
 
 /**
  * Privacy Policy Page
@@ -9,6 +11,17 @@ import { BannerAd } from '@/components/ads/AdSense';
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <nav className="bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between flex-wrap gap-2">
+          <Link to="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <BookOpen className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-xl font-bold text-slate-900">TradeBenchPrep</span>
+          </Link>
+          <SiteNavLinks />
+        </div>
+      </nav>
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-sm p-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
