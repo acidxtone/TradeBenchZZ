@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Canadian Skilled Trades Job Board | TradeBenchPrep | Pipefitter, Electrician, Millwright, Welder Jobs</title>
-  <meta name="description" content="Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated weekly. Part of TradeBenchPrep." />
+  <meta name="description" content="Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated every 5 days. Part of TradeBenchPrep." />
   <meta name="keywords" content="Canadian skilled trades jobs, pipefitter jobs Canada, electrician jobs Canada, millwright jobs, welder jobs, apprenticeship jobs, steamfitter jobs, trade jobs Canada" />
   <meta name="author" content="TradeBenchPrep" />
   <meta name="robots" content="index, follow" />
@@ -16,7 +16,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Canadian Skilled Trades Job Board | TradeBenchPrep" />
-  <meta property="og:description" content="Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated weekly." />
+  <meta property="og:description" content="Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated every 5 days." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.tradebenchprep.org/jobs.html" />
   <meta property="og:image" content="https://www.tradebenchprep.org/favicon.png" />
@@ -24,7 +24,7 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Canadian Skilled Trades Job Board | TradeBenchPrep" />
-  <meta name="twitter:description" content="Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated weekly." />
+  <meta name="twitter:description" content="Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated every 5 days." />
   <meta name="twitter:image" content="https://www.tradebenchprep.org/favicon.png" />
 
   <!-- Structured Data: Job board page -->
@@ -33,7 +33,7 @@
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Canadian Skilled Trades Job Board",
-    "description": "Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated weekly.",
+    "description": "Find skilled trades jobs across Canada. Pipefitter, Steamfitter, Electrician, Millwright and Welder job postings updated every 5 days.",
     "url": "https://www.tradebenchprep.org/jobs.html",
     "publisher": {
       "@type": "Organization",
@@ -212,8 +212,9 @@
     .ad-slot-leaderboard {
       width: 100%;
       max-width: 728px;
+      min-height: 90px;
       height: 90px;
-      margin: 0 auto 1.25rem;
+      margin: 0 auto 1.5rem;
     }
     .ad-slot-sidebar {
       width: 100%;
@@ -240,54 +241,89 @@
       .sidebar { order: -1; }
     }
 
+    /* ── FILTERS: two-row layout so search and dropdowns don’t crowd or overlap ── */
     .filters-bar {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1rem 1.25rem;
+      padding: 1.25rem 1.5rem;
       margin-bottom: 1.25rem;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
+      flex-direction: column;
+      gap: 1rem;
       box-shadow: var(--shadow);
+    }
+    .filters-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .filters-row-search {
+      width: 100%;
     }
     .filter-group {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
+      min-width: 0;
+    }
+    .filter-group-search {
       flex: 1;
-      min-width: 160px;
+      min-width: 0;
+      max-width: 100%;
+    }
+    .filter-group-search label {
+      flex-shrink: 0;
+    }
+    .filter-group-search input {
+      min-width: 0;
+      flex: 1;
     }
     .filter-group label {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--muted);
       white-space: nowrap;
+      flex-shrink: 0;
     }
     .filter-group select,
     .filter-group input[type="text"] {
-      flex: 1;
+      min-width: 0;
+      width: 100%;
+      max-width: 100%;
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 0.45rem 0.7rem;
+      padding: 0.5rem 0.75rem;
       font-family: inherit;
-      font-size: 0.85rem;
+      font-size: 0.875rem;
       color: var(--text);
       background: var(--white);
       outline: none;
       transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .filter-group select {
+      cursor: pointer;
+      appearance: auto;
     }
     .filter-group select:focus,
     .filter-group input[type="text"]:focus {
       border-color: var(--blue);
       box-shadow: 0 0 0 3px rgba(37,99,235,.12);
     }
+    .filters-row-dropdowns .filter-group {
+      flex: 0 1 auto;
+      min-width: 140px;
+    }
+    .filters-row-dropdowns .filter-group select {
+      min-width: 120px;
+    }
     .btn-reset {
+      flex-shrink: 0;
       background: none;
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 0.45rem 0.9rem;
+      padding: 0.5rem 1rem;
       font-family: inherit;
       font-size: 0.82rem;
       font-weight: 500;
@@ -305,8 +341,9 @@
       margin-bottom: 1rem;
       flex-wrap: wrap;
       gap: 0.5rem;
+      min-height: 1.5em;
     }
-    .results-meta p { font-size: 0.85rem; color: var(--muted); }
+    .results-meta p { font-size: 0.85rem; color: var(--muted); margin: 0; }
     .results-meta strong { color: var(--text); }
     .updated-badge {
       font-size: 0.75rem;
@@ -419,6 +456,8 @@
     .no-results svg { width: 48px; height: 48px; color: var(--border); margin-bottom: 1rem; }
     .no-results h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
     .no-results p { color: var(--muted); font-size: 0.875rem; }
+    .no-results a { color: var(--blue); text-decoration: underline; }
+    .no-results a:hover { color: var(--blue-dark); }
 
     .sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
     .sidebar-card {
@@ -505,12 +544,18 @@
     .footer-links a:hover { color: var(--blue); }
     .footer-copy { font-size: 0.78rem; color: var(--muted); }
 
+    /* Responsive: filters and layout */
+    @media (max-width: 768px) {
+      .filters-row-dropdowns .filter-group { min-width: 100%; }
+      .filters-row-dropdowns .filter-group select { min-width: 0; width: 100%; }
+      .filters-row-dropdowns .btn-reset { width: 100%; }
+    }
     @media (max-width: 600px) {
       .job-card { grid-template-columns: 1fr; }
       .job-card-right { flex-direction: row; align-items: center; justify-content: space-between; }
       .nav-links { display: none; }
-      .filters-bar { flex-direction: column; }
-      .filter-group { min-width: 100%; }
+      .page-wrap { padding: 1rem 1rem 2rem; }
+      .filters-bar { padding: 1rem; }
     }
   </style>
 </head>
@@ -539,10 +584,10 @@
 
 <section class="hero">
   <div class="hero-badge">
-    <span></span> Updated weekly — Canadian skilled trades jobs
+    <span></span> Updated every 5 days — Canadian skilled trades jobs
   </div>
   <h1>Find Your Next <em>Trades Job</em> in Canada</h1>
-  <p>Pipefitter, Steamfitter, Electrician, Millwright &amp; Welder postings aggregated weekly from across Canada.</p>
+  <p>Pipefitter, Steamfitter, Electrician, Millwright &amp; Welder postings aggregated every 5 days from across Canada.</p>
 </section>
 
 <div class="page-wrap">
@@ -559,45 +604,49 @@
     </section>
 
     <div class="filters-bar">
-      <div class="filter-group">
-        <label for="search">🔍</label>
-        <input type="text" id="search" placeholder="Search title, company, city…" autocomplete="off" />
+      <div class="filters-row filters-row-search">
+        <div class="filter-group filter-group-search">
+          <label for="search">Search</label>
+          <input type="text" id="search" placeholder="Title, company, city…" autocomplete="off" />
+        </div>
       </div>
-      <div class="filter-group">
-        <label for="filter-trade">Trade</label>
-        <select id="filter-trade">
-          <option value="">All Trades</option>
-          <option value="pipefitter">Pipefitter</option>
-          <option value="steamfitter">Steamfitter</option>
-          <option value="electrician">Electrician</option>
-          <option value="millwright">Millwright</option>
-          <option value="welder">Welder</option>
-        </select>
+      <div class="filters-row filters-row-dropdowns">
+        <div class="filter-group">
+          <label for="filter-trade">Trade</label>
+          <select id="filter-trade">
+            <option value="">All Trades</option>
+            <option value="pipefitter">Pipefitter</option>
+            <option value="steamfitter">Steamfitter</option>
+            <option value="electrician">Electrician</option>
+            <option value="millwright">Millwright</option>
+            <option value="welder">Welder</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-province">Province</label>
+          <select id="filter-province">
+            <option value="">All Provinces</option>
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="MB">Manitoba</option>
+            <option value="ON">Ontario</option>
+            <option value="QC">Quebec</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-level">Level</label>
+          <select id="filter-level">
+            <option value="">All Levels</option>
+            <option value="Journeyman">Journeyman</option>
+            <option value="Apprentice">Apprentice</option>
+          </select>
+        </div>
+        <button type="button" class="btn-reset" onclick="resetFilters()">Clear</button>
       </div>
-      <div class="filter-group">
-        <label for="filter-province">Province</label>
-        <select id="filter-province">
-          <option value="">All Provinces</option>
-          <option value="AB">Alberta</option>
-          <option value="BC">British Columbia</option>
-          <option value="SK">Saskatchewan</option>
-          <option value="MB">Manitoba</option>
-          <option value="ON">Ontario</option>
-          <option value="QC">Quebec</option>
-          <option value="NS">Nova Scotia</option>
-          <option value="NB">New Brunswick</option>
-          <option value="NL">Newfoundland</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-level">Level</label>
-        <select id="filter-level">
-          <option value="">All Levels</option>
-          <option value="Journeyman">Journeyman</option>
-          <option value="Apprentice">Apprentice</option>
-        </select>
-      </div>
-      <button class="btn-reset" onclick="resetFilters()">Clear</button>
     </div>
 
     <div class="results-meta">
@@ -679,6 +728,14 @@
 <script>
   let allJobs = [];
 
+  function escapeHtml(str) {
+    if (str == null) return '';
+    const s = String(str);
+    const div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
   const tradeLabels = {
     pipefitter:  'Pipefitter',
     steamfitter: 'Steamfitter',
@@ -711,8 +768,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
-          <h3>No jobs found</h3>
-          <p>Try adjusting your filters or check back after the next weekly update.</p>
+          <h3>No jobs match your filters</h3>
+          <p>Try adjusting your filters or check back after the next update (every 5 days).</p>
         </div>`;
       midAd.style.display = 'none';
       return;
@@ -732,31 +789,31 @@
       card.innerHTML = `
         <div class="job-card-left">
           <div class="job-tags">
-            <span class="tag tag-trade">${tradeLabels[job.trade] || job.trade}</span>
-            <span class="tag ${levelClass}">${job.level}</span>
-            <span class="tag tag-type">${job.type}</span>
+            <span class="tag tag-trade">${escapeHtml(tradeLabels[job.trade] || job.trade)}</span>
+            <span class="tag ${levelClass}">${escapeHtml(job.level)}</span>
+            <span class="tag tag-type">${escapeHtml(job.type)}</span>
           </div>
-          <div class="job-title">${job.title}</div>
-          <div class="job-company">${job.company}</div>
+          <div class="job-title">${escapeHtml(job.title)}</div>
+          <div class="job-company">${escapeHtml(job.company)}</div>
           <div class="job-meta">
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
               </svg>
-              ${job.location}
+              ${escapeHtml(job.location)}
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
               </svg>
-              ${job.type}
+              ${escapeHtml(job.type)}
             </span>
           </div>
-          <div class="job-description">${job.description}</div>
+          <div class="job-description">${escapeHtml(job.description)}</div>
         </div>
         <div class="job-card-right">
-          <span class="job-posted">${daysSince(job.posted)}</span>
-          <a href="${job.url}" target="_blank" rel="noopener noreferrer" class="btn-apply">
+          <span class="job-posted">${escapeHtml(daysSince(job.posted))}</span>
+          <a href="${escapeHtml(job.url)}" target="_blank" rel="noopener noreferrer" class="btn-apply">
             View Job
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
@@ -775,11 +832,21 @@
     const province = document.getElementById('filter-province').value;
     const level    = document.getElementById('filter-level').value;
 
-    const filtered = allJobs.filter(job => {
-      const matchSearch   = !search   || [job.title, job.company, job.location, job.description].join(' ').toLowerCase().includes(search);
-      const matchTrade    = !trade    || job.trade === trade;
-      const matchProvince = !province || job.province === province;
-      const matchLevel    = !level    || job.level === level;
+    // Keep sidebar “Browse by Trade” in sync with dropdown
+    document.querySelectorAll('.trade-link-btn').forEach(function(btn) {
+      btn.classList.remove('selected');
+      var firstSpan = btn.querySelector('span');
+      var label = firstSpan ? firstSpan.textContent.trim() : '';
+      var isAll = !trade && label === 'All Trades';
+      var isThisTrade = trade && label === (tradeLabels[trade] || trade);
+      if (isAll || isThisTrade) btn.classList.add('selected');
+    });
+
+    const filtered = allJobs.filter(function(job) {
+      var matchSearch   = !search || [job.title, job.company, job.location, job.description].join(' ').toLowerCase().indexOf(search) !== -1;
+      var matchTrade    = !trade || job.trade === trade;
+      var matchProvince = !province || job.province === province;
+      var matchLevel    = !level || job.level === level;
       return matchSearch && matchTrade && matchProvince && matchLevel;
     });
 
@@ -836,7 +903,7 @@
       const latest = allJobs[0]?.posted;
       document.getElementById('last-updated').textContent = latest
         ? 'Last updated ' + formatDate(latest)
-        : 'Updated weekly';
+        : 'Updated every 5 days';
 
       buildTradeNav(allJobs);
       renderJobs(allJobs);
@@ -848,10 +915,10 @@
             <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
           </svg>
           <h3>Could not load jobs</h3>
-          <p>Make sure <code>jobs.json</code> is in the same folder as this page.</p>
+          <p>Jobs are updated every 5 days. If this keeps happening, check back later or visit <a href="https://www.jobbank.gc.ca/jobsearch/jobsearch" target="_blank" rel="noopener">Job Bank</a> and <a href="https://ca.indeed.com/" target="_blank" rel="noopener">Indeed Canada</a> directly.</p>
         </div>`;
       document.getElementById('result-count').textContent = '0';
-      document.getElementById('last-updated').textContent = 'Updated weekly';
+      document.getElementById('last-updated').textContent = 'Updated every 5 days';
     });
 
   document.getElementById('search').addEventListener('input', applyFilters);

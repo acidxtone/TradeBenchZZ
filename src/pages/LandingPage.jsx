@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Target, Zap, CheckCircle, ArrowRight } from "lucide-react";
+import { BookOpen, Target, Zap, CheckCircle, ArrowRight, Briefcase } from "lucide-react";
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import AnonymousSession from '@/lib/AnonymousSession';
 
@@ -147,6 +147,20 @@ export default function LandingPage() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Job board CTA — same style as exam prep CTA */}
+          <div className="mt-16 pt-12 border-t border-slate-200 text-center">
+            <p className="text-slate-600 mb-6 max-w-xl mx-auto">
+              Also explore current jobs in your trade. Browse Canadian skilled trades postings updated weekly.
+            </p>
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <a href="/jobs.html" className="inline-flex items-center gap-2">
+                <Briefcase className="w-5 h-5" />
+                Explore Job Board
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>

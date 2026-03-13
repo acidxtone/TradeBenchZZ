@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "title": "Electrician – Industrial",
+    "company": "Job Bank Canada",
+    "location": "Various locations, Canada",
+    "province": "ON",
+    "trade": "electrician",
+    "level": "Journeyman",
+    "type": "Full-time",
+    "description": "Search current electrician jobs across Canada. Industrial, construction, and maintenance positions updated daily on the federal Job Bank.",
+    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?searchstring=electrician",
+    "posted": "2026-03-12"
+  },
+  {
+    "title": "Pipefitter / Steamfitter",
+    "company": "Job Bank Canada",
+    "location": "Various locations, Canada",
+    "province": "AB",
+    "trade": "pipefitter",
+    "level": "Journeyman",
+    "type": "Full-time",
+    "description": "Browse pipefitter and steamfitter jobs on Job Bank. Roles in oil and gas, construction, and maintenance across Canadian provinces.",
+    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?searchstring=pipefitter",
+    "posted": "2026-03-12"
+  },
+  {
+    "title": "Millwright",
+    "company": "Job Bank Canada",
+    "location": "Various locations, Canada",
+    "province": "BC",
+    "trade": "millwright",
+    "level": "Journeyman",
+    "type": "Full-time",
+    "description": "Find millwright positions in manufacturing, mining, and industrial maintenance. Updated listings from Job Bank.",
+    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?searchstring=millwright",
+    "posted": "2026-03-11"
+  },
+  {
+    "title": "Welder",
+    "company": "Job Bank Canada",
+    "location": "Various locations, Canada",
+    "province": "SK",
+    "trade": "welder",
+    "level": "Journeyman",
+    "type": "Full-time",
+    "description": "Welder and welding technician jobs across Canada. Structural, pipe, and fabrication roles on the federal Job Bank.",
+    "url": "https://www.jobbank.gc.ca/jobsearch/jobsearch?searchstring=welder",
+    "posted": "2026-03-11"
+  },
+  {
+    "title": "Apprentice Electrician",
+    "company": "Indeed Canada",
+    "location": "Canada",
+    "province": "",
+    "trade": "electrician",
+    "level": "Apprentice",
+    "type": "Full-time",
+    "description": "Search apprentice electrician jobs on Indeed. Entry-level and apprenticeship positions for Canadian trades.",
+    "url": "https://ca.indeed.com/jobs?q=apprentice+electrician",
+    "posted": "2026-03-10"
+  },
+  {
+    "title": "Apprentice Pipefitter / Steamfitter",
+    "company": "Indeed Canada",
+    "location": "Canada",
+    "province": "",
+    "trade": "pipefitter",
+    "level": "Apprentice",
+    "type": "Full-time",
+    "description": "Apprentice pipefitter and steamfitter openings on Indeed. Start your apprenticeship in the trades.",
+    "url": "https://ca.indeed.com/jobs?q=apprentice+pipefitter",
+    "posted": "2026-03-10"
+  }
+]

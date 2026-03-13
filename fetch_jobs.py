@@ -48,13 +48,19 @@ def search(query: str, start: int = 1) -> list:
 
 
 def item_to_job(item: dict, trade: str, level: str = "Apprentice") -> dict:
-    """Map a search result item to our job card format."""
-    title = item.get("title", "")
+    """Map a search result item to our job card format. Safe for missing keys."""
+    title = item.get("title", "") or "Job posting"
     link = item.get("link", "")
-    snippet = item.get("snippet", "")
+    snippet = item.get("snippet", "") or ""
+    pagemap = item.get("pagemap") or {}
+    org_list = pagemap.get("organization") or []
+    company = (org_list[0].get("name", "—") if org_list and isinstance(org_list[0], dict) else "—")
+    metatags_list = pagemap.get("metatags") or []
+    first_meta = metatags_list[0] if metatags_list and isinstance(metatags_list[0], dict) else {}
+    posted = first_meta.get("article:published_time") or first_meta.get("date") or ""
     return {
         "title": title,
-        "company": item.get("pagemap", {}).get("organization", [{}])[0].get("name", "—") if item.get("pagemap") else "—",
+        "company": company,
         "location": "Canada",
         "province": "",
         "trade": trade,
@@ -62,7 +68,7 @@ def item_to_job(item: dict, trade: str, level: str = "Apprentice") -> dict:
         "type": "Full-time",
         "description": snippet,
         "url": link,
-        "posted": item.get("pagemap", {}).get("metatags", [{}])[0].get("article:published_time", "") or item.get("pagemap", {}).get("metatags", [{}])[0].get("date", "") or "",
+        "posted": posted,
     }
 
 
@@ -84,11 +90,14 @@ def main():
                 url = item.get("link", "")
                 if url and url not in seen_urls:
                     seen_urls.add(url)
-                    job = item_to_job(item, trade, level)
-                    if not job.get("posted"):
-                        from datetime import datetime, timezone
-                        job["posted"] = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
-                    jobs.append(job)
+                    try:
+                        job = item_to_job(item, trade, level)
+                        if not job.get("posted"):
+                            from datetime import datetime, timezone
+                            job["posted"] = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
+                        jobs.append(job)
+                    except (IndexError, KeyError, TypeError):
+                        pass
             if len(items) < 10:
                 break
 
