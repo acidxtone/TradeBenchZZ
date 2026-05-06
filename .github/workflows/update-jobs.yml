@@ -1,9 +1,9 @@
-# Run fetch_jobs.py every 5 days (04:00 UTC on days 1, 6, 11, 16, 21, 26) and commit updated public/jobs.json
+# Run fetch_jobs_direct.py every 3 days (04:00 UTC on days 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31) and commit updated public/jobs.json
 name: Update Job Board
 
 on:
   schedule:
-    - cron: '0 4 1,6,11,16,21,26 * *'
+    - cron: '0 4 1,4,7,10,13,16,19,22,25,28,31 * *'
   workflow_dispatch:
 
 jobs:
@@ -20,11 +20,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run fetch_jobs.py
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GOOGLE_CX: ${{ secrets.GOOGLE_CX }}
-        run: python3 fetch_jobs.py
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Run fetch_jobs_direct.py
+        run: python3 fetch_jobs_direct.py
 
       - name: Commit and push if changed
         run: |
