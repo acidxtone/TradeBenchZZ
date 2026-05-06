@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Target, Zap, CheckCircle, ArrowRight, Briefcase } from "lucide-react";
 import { SiteNavLinks } from '@/components/SiteNavLinks';
-import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import AnonymousSession from '@/lib/AnonymousSession';
 
 export default function LandingPage() {
@@ -61,13 +60,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Top Banner Ad — below hero so users see content before ads (AdSense policy) */}
-      <section className="pt-4 pb-4 px-6" aria-label="Advertisement">
-        <div className="max-w-6xl mx-auto">
-          <BannerAd position="top" />
-        </div>
-      </section>
-
+      
       <section className="py-16 px-6 border-t border-slate-100">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-2">
@@ -166,12 +159,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="py-6 px-6" aria-label="Advertisement">
-        <div className="max-w-5xl mx-auto">
-          <InContentAd position="middle" />
-        </div>
-      </section>
-
+      
       <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-serif font-bold text-slate-900 text-center mb-12">
@@ -238,12 +226,7 @@ export default function LandingPage() {
       </section>
 
       {/* Bottom Banner Ad */}
-      <section className="py-8 px-6" aria-label="Advertisement">
-        <div className="max-w-6xl mx-auto">
-          <BannerAd position="bottom" />
-        </div>
-      </section>
-
+      
       <footer className="border-t border-slate-100 py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">

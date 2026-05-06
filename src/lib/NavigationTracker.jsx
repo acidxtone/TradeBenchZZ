@@ -12,14 +12,6 @@ export default function NavigationTracker() {
 
     // Log user activity when navigating to a page
     useEffect(() => {
-        // Send Google Analytics page_view on route change (SPA)
-        if (typeof window.gtag === 'function') {
-            window.gtag('config', 'G-Y7SK2C9DZD', {
-                page_path: location.pathname + location.search,
-                page_title: document.title
-            });
-        }
-
         // Extract page name from pathname
         const pathname = location.pathname;
         let pageName;

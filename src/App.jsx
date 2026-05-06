@@ -8,7 +8,6 @@ import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import PageNotFound from '@/lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
-import { AdProvider, SideAd, StickyHeaderAd, StickyFooterAd } from '@/components/ads/AdProvider';
 import React, { useEffect, lazy, Suspense } from 'react';
 import { Navigate } from 'react-router-dom';
 import { initPeriodicCleanup } from '@/lib/SessionCleanup';
@@ -47,9 +46,6 @@ function RouteLoadingFallback() {
 
 const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy', 'Terms', 'debug', 'test', 'connection'];
 
-/** Routes where global ads are allowed (content-rich pages per AdSense policy).
- * Excluded: /Dashboard, /Study, /Quiz (loading/redirect); /QuizSetup, /Curriculum, /Settings (low word count). */
-const ROUTES_WITH_ADS = ['/'];
 const TRADES_ROUTE_PREFIX = '/trades';
 
 const LayoutWrapper = ({ children, currentPageName }) => {
@@ -214,42 +210,6 @@ const AuthenticatedApp = () => {
   );
 };
 
-/** True for /trades (hub) or /trades/:trade/year-N (year pages). Not for /trades/:trade (trade hub — low content). */
-function isTradesRouteWithAds(pathname) {
-  const path = pathname.replace(/\/$/, '') || '/';
-  if (path === '/trades') return true;
-  return /^\/trades\/[^/]+\/year-\d+$/.test(path);
-}
-
-/** Renders global ads only on content-rich routes. Never show during auth loading
- * (spinner-only screen) to avoid AdSense "ads without publisher-content". */
-const GlobalAdsWrapper = () => {
-  const location = useLocation();
-  const { isLoadingAuth } = useAuth();
-  const tradesWithAds = isTradesRouteWithAds(location.pathname);
-  const showAds =
-    (ROUTES_WITH_ADS.includes(location.pathname) || tradesWithAds) &&
-    (tradesWithAds || !isLoadingAuth);
-  if (!showAds) return null;
-  return (
-    <>
-      <SideAd position="left" />
-      <SideAd position="right" />
-      <StickyHeaderAd />
-    </>
-  );
-};
-
-const StickyFooterAdWrapper = () => {
-  const location = useLocation();
-  const { isLoadingAuth } = useAuth();
-  const tradesWithAds = isTradesRouteWithAds(location.pathname);
-  const showAds =
-    (ROUTES_WITH_ADS.includes(location.pathname) || tradesWithAds) &&
-    (tradesWithAds || !isLoadingAuth);
-  if (!showAds) return null;
-  return <StickyFooterAd />;
-};
 
 function App() {
   useEffect(() => {
@@ -258,25 +218,21 @@ function App() {
 
   return (
     <HelmetProvider>
-      <AdProvider>
-        <AuthProvider>
-          <QueryClientProvider client={queryClientInstance}>
-            <Router>
-              <Suspense fallback={<RouteLoadingFallback />}>
-                <SEO />
-                <NavigationTracker />
-                <PerformanceMonitor />
-                <GlobalAdsWrapper />
-                <div className="pt-12 md:pt-16 lg:mx-32 min-h-screen">
-                  <TradesOrRest />
-                </div>
-                <StickyFooterAdWrapper />
-              </Suspense>
-            </Router>
-            <Toaster />
-          </QueryClientProvider>
-        </AuthProvider>
-      </AdProvider>
+      <AuthProvider>
+        <QueryClientProvider client={queryClientInstance}>
+          <Router>
+            <Suspense fallback={<RouteLoadingFallback />}>
+              <SEO />
+              <NavigationTracker />
+              <PerformanceMonitor />
+              <div className="pt-12 md:pt-16 lg:mx-32 min-h-screen">
+                <TradesOrRest />
+              </div>
+            </Suspense>
+          </Router>
+          <Toaster />
+        </QueryClientProvider>
+      </AuthProvider>
     </HelmetProvider>
   )
 }

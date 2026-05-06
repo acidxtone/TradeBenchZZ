@@ -13,7 +13,6 @@ export function SiteNavLinks({ linkClassName = 'text-sm text-slate-600 hover:tex
       <Link to="/" className={linkClassName}>Home</Link>
       <Link to="/trades" className={linkClassName}>Trades</Link>
       <Link to="/trades" className={linkClassName}>Study Guides</Link>
-      <a href="/jobs.html" className={linkClassName}>Job Board</a>
     </div>
   );
 }

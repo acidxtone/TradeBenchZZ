@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen } from 'lucide-react';
-import { BannerAd } from '@/components/ads/AdSense';
 import { SiteNavLinks } from '@/components/SiteNavLinks';
 
 /**
@@ -142,10 +141,7 @@ const Privacy = () => {
               <p className="text-sm text-gray-500">
                 <strong>Effective Date:</strong> February 17, 2026
               </p>
-              <section className="mt-8 pt-8 border-t border-gray-200" aria-label="Advertisement">
-                <BannerAd position="bottom" />
-              </section>
-              <div className="flex gap-4 text-sm mt-6">
+                            <div className="flex gap-4 text-sm mt-6">
                 <Link to="/" className="text-blue-600 hover:underline">Home</Link>
                 <Link to="/Terms" className="text-blue-600 hover:underline">Terms of Service</Link>
               </div>

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { BookOpen, ArrowRight } from 'lucide-react';
 import { SiteNavLinks } from '@/components/SiteNavLinks';
-import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import AnonymousSession from '@/lib/AnonymousSession';
 
 /**
@@ -84,32 +83,3 @@ export function GetStartedButton({ className = '' }) {
   );
 }
 
-export function TradesAdTop() {
-  return (
-    <section className="py-4 px-6" aria-label="Advertisement">
-      <div className="max-w-6xl mx-auto">
-        <BannerAd position="top" />
-      </div>
-    </section>
-  );
-}
-
-export function TradesAdMiddle() {
-  return (
-    <section className="py-6 px-6" aria-label="Advertisement">
-      <div className="max-w-5xl mx-auto">
-        <InContentAd position="middle" />
-      </div>
-    </section>
-  );
-}
-
-export function TradesAdBottom() {
-  return (
-    <section className="py-8 px-6" aria-label="Advertisement">
-      <div className="max-w-6xl mx-auto">
-        <BannerAd position="bottom" />
-      </div>
-    </section>
-  );
-}
