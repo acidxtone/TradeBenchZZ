@@ -69,14 +69,6 @@ export default function LandingPage() {
           <p className="text-slate-600 text-center mb-10 max-w-xl mx-auto">
             TradeBenchPrep supports Steamfitter/Pipefitter, Electrician, Millwright, and Welder apprentices preparing for provincial and interprovincial certification exams.
           </p>
-          <div className="text-center mb-10">
-            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
-              <Link to="/trades" className="inline-flex items-center gap-2">
-                Explore exam prep by trade and year
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-          </div>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center mx-auto mb-3">1</div>
@@ -225,8 +217,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Bottom Banner Ad */}
-      
       <footer className="border-t border-slate-100 py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">

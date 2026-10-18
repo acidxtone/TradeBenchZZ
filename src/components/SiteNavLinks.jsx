@@ -12,7 +12,7 @@ export function SiteNavLinks({ linkClassName = 'text-sm text-slate-600 hover:tex
     <div className={wrapperClassName}>
       <Link to="/" className={linkClassName}>Home</Link>
       <Link to="/trades" className={linkClassName}>Trades</Link>
-      <Link to="/trades" className={linkClassName}>Study Guides</Link>
+      <Link to="/Curriculum" className={linkClassName}>Study Guides</Link>
     </div>
   );
 }
